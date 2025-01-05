@@ -6,8 +6,7 @@ const Hero = () => {
   const titles = [
     "Full Stack Developer",
     "React Native Expert",
-    "Network Expert",
-    "CS Lecturer"
+    "Network Expert"
   ];
 
   return (
@@ -35,7 +34,7 @@ const Hero = () => {
               </div>
               <div className="rounded-md shadow mt-3 sm:mt-0">
                 <a
-                  href="https://drive.google.com/file/d/18vW4cxaMrTxnGbGcOXfoU76HljhdftmJ/view?usp=drive_link"
+                  href="https://drive.google.com/file/d/1sm9R2Zmg2HnjqU3ZdYghyyr6gQMhI5Fb/view?usp=sharing"
                   target="_blank"
                   className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10"
                 >

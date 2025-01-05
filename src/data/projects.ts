@@ -8,7 +8,7 @@ export const projects = [
     liveLink: 'https://snack.expo.dev/@iamsaadrandhawa/mascot-isp'
   },
   {
-    title: 'NameBadge',
+    title: 'BadgeHub',
     description: 'A digital badge creation and management platform for events and conferences. Features include QR code generation, real-time badge customization, and attendee tracking system. Supports both online and offline badge generation.',
     image: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?auto=format&fit=crop&q=80&w=800',
     technologies: ['React Native', 'Expo', 'QR Code API', 'AsyncStorage'],
@@ -19,7 +19,7 @@ export const projects = [
     title: 'TicTacPro',
     description: 'An advanced Tic Tac Toe game with multiple game modes including AI opponent, local multiplayer, and online multiplayer. Features include customizable themes, game statistics, and replay functionality.',
     image: 'https://images.unsplash.com/photo-1611996575749-79a3a250f948?auto=format&fit=crop&q=80&w=800',
-    technologies: ['React Native', 'Expo', ],
+    technologies: ['React Native', 'Expo', 'WebSocket', 'Firebase'],
     githubLink: 'https://github.com/iamsaadrandhawa',
     liveLink: 'https://snack.expo.dev/@iamsaadrandhawa/tictacpro'
   },
