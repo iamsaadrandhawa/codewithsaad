@@ -17,7 +17,7 @@ const Hero = () => {
           <div className="md:w-1/2 text-center md:text-left">
             <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
               <span className="block">Hi, I'm Saad</span>
-              <span className="block h-20"><TypeWriter words={titles} /></span>
+              <span className="block h-15"><TypeWriter words={titles} /></span>
             </h1>
             <p className="mt-3 text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl max-w-2xl">
               Crafting exceptional mobile experiences with React Native.
