@@ -4,9 +4,11 @@ import TypeWriter from './TypeWriter';
 
 const Hero = () => {
   const titles = [
-    "Full Stack Developer",
-    "React Native Expert",
+    "Mern-Stack Developer",
+    "React-Native Expert",
     "Network Expert"
+    "CS Lecturer"
+    
   ];
 
   return (
