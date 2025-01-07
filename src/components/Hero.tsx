@@ -6,9 +6,8 @@ const Hero = () => {
   const titles = [
     "Mern-Stack Developer",
     "React-Native Expert",
-    "Network Expert"
-    "CS Lecturer"
-    
+    "Network Expert",
+    "CS Lecturer"    
   ];
 
   return (
