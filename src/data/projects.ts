@@ -35,7 +35,7 @@ export const projects = [
     title: 'Shahkot Bazar',
     description: 'A local marketplace platform connecting vendors and customers in Shahkot. Features include real-time product listings, secure user authentication, and seamless shopping experience with integrated payment solutions.',
     image: 'https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?auto=format&fit=crop&q=80&w=800',
-    technologies: ['React Native', 'Node.js', 'MongoDB', 'Firebase'],
+    technologies: ['React Native','React js', 'Node.js', 'MongoDB', 'Express' ,],
     githubLink: 'https://github.com/iamsaadrandhawa',
     liveLink: 'https://snack.expo.dev/@iamsaadrandhawa/shahkot-bazar'
   },
