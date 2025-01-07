@@ -19,7 +19,7 @@ export const projects = [
     title: 'TicTacPro',
     description: 'An advanced Tic Tac Toe game with multiple game modes including AI opponent, local multiplayer, and online multiplayer. Features include customizable themes, game statistics, and replay functionality.',
     image: 'https://images.unsplash.com/photo-1611996575749-79a3a250f948?auto=format&fit=crop&q=80&w=800',
-    technologies: ['React Native', 'Expo', 'WebSocket', 'Firebase'],
+    technologies: ['React Native', 'Expo'],
     githubLink: 'https://github.com/iamsaadrandhawa',
     liveLink: 'https://snack.expo.dev/@iamsaadrandhawa/tictacpro'
   },
@@ -27,7 +27,7 @@ export const projects = [
     title: 'FoodieHub',
     description: 'A feature-rich food delivery app with real-time order tracking, multiple payment options, and restaurant management system. Includes features like favorite restaurants, order history, and dietary preferences.',
     image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=800',
-    technologies: ['React Native', 'Expo', 'Maps API', 'Firebase'],
+    technologies: ['React Native', 'Expo', 'Firebase','AsyncStorage'],
     githubLink: 'https://github.com/iamsaadrandhawa',
     liveLink: 'https://snack.expo.dev/@iamsaadrandhawa/foodiehub'
   },
@@ -43,7 +43,7 @@ export const projects = [
     title: 'LocalVendor',
     description: 'A feature-rich e-commerce application focusing on local vendors, enabling them to showcase and sell their products. Includes inventory management, order tracking, and secure payment processing.',
     image: 'https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&q=80&w=800',
-    technologies: ['React Native', 'AsyncStorage', 'Firebase'],
+    technologies: ['React Native', 'AsyncStorage', 'Firebase-auth','Firebase-storeage','Firebase-store],
     githubLink: 'https://github.com/iamsaadrandhawa',
     liveLink: 'https://snack.expo.dev/@iamsaadrandhawa/localvendor'
   },
