@@ -73,7 +73,9 @@ export const projects = [
   },
   {
   "title": "Tenant Management App",
-  "description": "Developed a tenant management app that allows property owners to efficiently manage tenant details, rent payments, and rent history. Integrated Firebase for user authentication and Firestore for real-time data synchronization. Key features include tenant search functionality, payment history tracking, and dynamic rent status display. Implemented smooth UI/UX with React Native, providing an intuitive and responsive interface for users to view, search, and manage tenant records and rental payments.",
+  "description": "Developed a Tenant Management App using React Native, Firebase, and Firestore, allowing property owners to efficiently manage tenant details, track rent payments, and view payment history. Features include tenant search, dynamic rent status updates, and an intuitive UI for smooth user experience."
+
+Let me know if you'd like any changes",
   "image": "https://propertymanagementnyc.co/wp-content/uploads/2024/10/BLOG-1.png", 
   "technologies": ["React Native", "Firebase", "Firestore"],
   "githubLink": "https://github.com/iamsaadrandhawa/tenant-management-app", 
