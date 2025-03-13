@@ -35,7 +35,7 @@ const Hero = () => {
               </div>
               <div className="rounded-md shadow mt-3 sm:mt-0">
                 <a
-                  href="https://drive.google.com/file/d/1dCDTu4sL3hhYE5wzgCzvhaUfbqz97xvs/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1_lpktGBOmBjuYNGL-SHhwBawTTauOIHX/view?usp=sharing"
                   target="_blank"
                   className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10"
                 >
