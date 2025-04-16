@@ -5,6 +5,7 @@ import Summary from './components/Summary';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Education from './components/Education';
+import Experience from './components/Experience';
 import Certifications from './components/Certifications';
 import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
