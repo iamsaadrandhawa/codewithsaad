@@ -50,7 +50,7 @@ const Hero = () => {
               <img 
                 src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiM4NWM2hDQYDWDTx1WwwasFayZmCV11ZwWFBN4l4tMg8E9uVa0wPMQeRGyJty3yCpjv9s4FDb0CwAiO4hCqZ7zWVPhHRP0cpbwC8033z9voxpuqCZuZddCGyHYWFUqFQMm-_OpinaZYnGLvX-9t2ydbxbQXywFAUdIka_lkKGrF_aNGKxzgJXOJwncNdYa/w457-h609/IMG-20241207-WA0013.jpg" 
                 alt="Saad" 
-                className="rounded-full w-64 h-64 object-cover shadow-2xl border-4 border-white"
+                className="rounded-full w-70 h-70 object-cover shadow-2xl border-4 border-white"
               />
               <div className="absolute inset-0 rounded-full shadow-inner"></div>
             </div>
