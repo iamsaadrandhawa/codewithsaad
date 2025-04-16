@@ -48,7 +48,7 @@ const Hero = () => {
           <div className="md:w-1/2 mt-8 md:mt-0">
             <div className="relative w-64 h-64 mx-auto">
               <img 
-                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgq8GHHxvaONYYhiwXEg7OJjSGKWMq1t-N2EGBMUWWQHP7VTMm1WG7w_FJewN1smauKqWF0k7GTlBAjpWHvbGdmcgh9VKWqlcPgt_uQX4jpxlwXJ1gEZKzjT9CaEjmsmg_Qoi1oPloxs-f-dJdZc-O9RC8U9cvKTekclY5AAM1OLfk8dE8GvtT5PMKt_PN7/w403-h537/saad%20(1).jpg" 
+                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiM4NWM2hDQYDWDTx1WwwasFayZmCV11ZwWFBN4l4tMg8E9uVa0wPMQeRGyJty3yCpjv9s4FDb0CwAiO4hCqZ7zWVPhHRP0cpbwC8033z9voxpuqCZuZddCGyHYWFUqFQMm-_OpinaZYnGLvX-9t2ydbxbQXywFAUdIka_lkKGrF_aNGKxzgJXOJwncNdYa/w457-h609/IMG-20241207-WA0013.jpg" 
                 alt="Saad" 
                 className="rounded-full w-64 h-64 object-cover shadow-2xl border-4 border-white"
               />
