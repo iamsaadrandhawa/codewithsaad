@@ -2,24 +2,67 @@ import React from 'react';
 import { Briefcase, Calendar, MapPin } from 'lucide-react';
 
 const Experience = () => {
-  const experiences = [
-    {
-      position: 'Frontend Developer',
-      company: 'Techsol Solutions',
-      location: 'Faisalabad',
-      period: 'Jan 2023 - Present',
-      description: 'Developed responsive web applications using React and TypeScript. Implemented modern UI/UX designs and improved application performance.',
-      icon: <Briefcase className="w-8 h-8 text-indigo-600" />
-    },
-    {
-      position: 'Web Developer Intern',
-      company: 'Digital Minds',
-      location: 'Remote',
-      period: 'Jun 2022 - Dec 2022',
-      description: 'Assisted in building and maintaining client websites. Gained hands-on experience with React, Node.js, and database management.',
-      icon: <Briefcase className="w-8 h-8 text-indigo-600" />
-    }
-  ];
+ const experiences = [
+  {
+    position: 'Application Developer',
+    company: 'Shahkot, Pakistan',
+    location: 'Shahkot, Pakistan',
+    period: '01/07/2022 – Present',
+    description: `
+      • Performance Optimization  
+      • Smooth UI/UX Design  
+      • State Management  
+      • Native Modules & Third-Party Integrations  
+      • Clean Code Practices  
+      • Networking & Real-Time Data Management  
+      • Authentication & Security Implementation  
+      • Fast & Scalable Development  
+      • Testing & Debugging  
+      • Code Reusability & Modularization  
+      • App Deployment  
+      • Multi-Language Support
+    `,
+    icon: <Briefcase className="w-8 h-8 text-indigo-600" />
+  },
+  {
+    position: 'Computer Science Lecturer',
+    company: 'Government Graduate College Shahkot',
+    location: 'Shahkot, Pakistan',
+    period: '25/09/2024 – 25/12/2024',
+    description: `
+      • Assessment  
+      • Curriculum Development  
+      • Student Mentorship  
+      • Lab Supervision  
+      • Research  
+      • Collaboration with Faculty  
+      • Community Engagement  
+      • Professional Development  
+      • Ethical Teaching Practices  
+    `,
+    icon: <Briefcase className="w-8 h-8 text-indigo-600" />
+  },
+  {
+    position: 'Network Administrator',
+    company: 'Mascot Fiber (Pvt) Ltd',
+    location: 'Shahkot, Pakistan',
+    period: '10/10/2022 – Present',
+    description: `
+      • Network Infrastructure Management  
+      • Fiber Optic Network Installation & Troubleshooting  
+      • Network Performance Monitoring  
+      • Security Protocols & Data Protection  
+      • IT Support & Troubleshooting  
+      • Network Expansion & System Upgrades  
+      • Maintenance, Updates & Backups  
+      • Staff Training on IT Resources  
+      • Managing Computers & Devices  
+      • Keeping Software & Security Updated  
+    `,
+    icon: <Briefcase className="w-8 h-8 text-indigo-600" />
+  }
+];
+
 
   return (
     <section id="experience" className="py-20 bg-white">
