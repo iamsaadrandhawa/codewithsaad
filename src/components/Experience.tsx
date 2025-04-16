@@ -5,7 +5,7 @@ const Experience = () => {
  const experiences = [
   {
     position: 'Application Developer',
-    company: 'Shahkot, Pakistan',
+    company: 'Freelance, Pakistan',
     location: 'Shahkot, Pakistan',
     period: '01/07/2022 – Present',
     description: `
