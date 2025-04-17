@@ -1,8 +1,8 @@
 import emailjs from '@emailjs/browser';
 
-const EMAIL_SERVICE_ID = 'YOUR_SERVICE_ID';
-const EMAIL_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
-const EMAIL_PUBLIC_KEY = 'YOUR_PUBLIC_KEY';
+const EMAIL_SERVICE_ID = 'saad_18977';
+const EMAIL_TEMPLATE_ID = 'saadtemplate_18977';
+const EMAIL_PUBLIC_KEY = '9mbvU317KBo1dkuYU';
 
 export interface EmailData {
   name: string;
