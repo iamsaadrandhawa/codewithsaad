@@ -20,8 +20,8 @@ const Hero = () => {
               <span className="block h-15"><TypeWriter words={titles} /></span>
             </h1>
             <p className="mt-3 text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl max-w-2xl">
-              Crafting exceptional mobile experiences with React Native.
-              Specialized in building scalable cross-platform applications.
+             Building scalable, cross-platform mobile apps with React Native.
+                Expert in network architecture and seamless connectivity solutions.
             </p>
             <div className="mt-5 sm:flex sm:justify-start md:mt-8 space-x-4">
               <div className="rounded-md shadow">
