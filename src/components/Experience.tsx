@@ -2,67 +2,82 @@ import React from 'react';
 import { Briefcase, Calendar, MapPin } from 'lucide-react';
 
 const Experience = () => {
- const experiences = [
-  {
-    position: 'Application Developer',
-    company: 'Freelance, Pakistan',
-    location: 'Shahkot, Pakistan',
-    period: '01/07/2022 – Present',
-    description: `
-      • Performance Optimization  
-      • Smooth UI/UX Design  
-      • State Management  
-      • Native Modules & Third-Party Integrations  
-      • Clean Code Practices  
-      • Networking & Real-Time Data Management  
-      • Authentication & Security Implementation  
-      • Fast & Scalable Development  
-      • Testing & Debugging  
-      • Code Reusability & Modularization  
-      • App Deployment  
-      • Multi-Language Support
-    `,
-    icon: <Briefcase className="w-8 h-8 text-indigo-600" />
-  },
-  {
-    position: 'Computer Science Lecturer',
-    company: 'Government Graduate College Shahkot',
-    location: 'Shahkot, Pakistan',
-    period: '25/09/2024 – 25/12/2024',
-    description: `
-      • Assessment  
-      • Curriculum Development  
-      • Student Mentorship  
-      • Lab Supervision  
-      • Research  
-      • Collaboration with Faculty  
-      • Community Engagement  
-      • Professional Development  
-      • Ethical Teaching Practices  
-    `,
-    icon: <Briefcase className="w-8 h-8 text-indigo-600" />
-  },
-  {
-    position: 'Network Administrator',
-    company: 'Mascot Fiber (Pvt) Ltd',
-    location: 'Shahkot, Pakistan',
-    period: '10/10/2022 – Present',
-    description: `
-      • Network Infrastructure Management  
-      • Fiber Optic Network Installation & Troubleshooting  
-      • Network Performance Monitoring  
-      • Security Protocols & Data Protection  
-      • IT Support & Troubleshooting  
-      • Network Expansion & System Upgrades  
-      • Maintenance, Updates & Backups  
-      • Staff Training on IT Resources  
-      • Managing Computers & Devices  
-      • Keeping Software & Security Updated  
-    `,
-    icon: <Briefcase className="w-8 h-8 text-indigo-600" />
-  }
-];
-
+  const experiences = [
+    {
+      position: 'Application Developer',
+      company: 'Freelance, Pakistan',
+      location: 'Shahkot, Pakistan',
+      period: '01/07/2022 – Current',
+      description: `
+        • Performance Optimization  
+        • Smooth UI/UX Design  
+        • State Management  
+        • Native Modules & Third-Party Integrations  
+        • Clean Code Practices  
+        • Networking & Real-Time Data Management  
+        • Authentication & Security Implementation  
+        • Fast & Scalable Development  
+        • Testing & Debugging  
+        • Code Reusability & Modularization  
+        • App Deployment  
+        • Multi-Language Support
+      `,
+      icon: <Briefcase className="w-8 h-8 text-indigo-600" />
+    },
+    {
+      position: 'Computer Science Lecturer',
+      company: 'Government Graduate College Shahkot',
+      location: 'Shahkot, Pakistan',
+      period: '25/09/2024 – 25/12/2024',
+      description: `
+        • Assessment  
+        • Curriculum Development  
+        • Student Mentorship  
+        • Lab Supervision  
+        • Research  
+        • Collaboration with Faculty  
+        • Community Engagement  
+        • Professional Development  
+        • Ethical Teaching Practices  
+      `,
+      icon: <Briefcase className="w-8 h-8 text-indigo-600" />
+    },
+    {
+      position: 'Network Administrator',
+      company: 'Mascot Fiber (Pvt) Ltd',
+      location: 'Shahkot, Pakistan',
+      period: '10/10/2022 – 03/04/2025',
+      description: `
+        • Network Infrastructure Management  
+        • Fiber Optic Network Installation & Troubleshooting  
+        • Network Performance Monitoring  
+        • Security Protocols & Data Protection  
+        • IT Support & Troubleshooting  
+        • Network Expansion & System Upgrades  
+        • Maintenance, Updates & Backups  
+        • Staff Training on IT Resources  
+        • Managing Computers & Devices  
+        • Keeping Software & Security Updated  
+      `,
+      icon: <Briefcase className="w-8 h-8 text-indigo-600" />
+    },
+    {
+      position: 'IT Intern',
+      company: 'Jadeed Feed, Shahkot',
+      location: 'Shahkot, Pakistan',
+      period: '03/04/2025 – Current',
+      description: `
+        • IT Support & Troubleshooting  
+        • System Maintenance  
+        • Data Entry & Reporting  
+        • Assist in Network Monitoring  
+        • Software Installation & Updates  
+        • Technical Documentation  
+        • Learning ERP Systems & IT Processes  
+      `,
+      icon: <Briefcase className="w-8 h-8 text-indigo-600" />
+    }
+  ];
 
   return (
     <section id="experience" className="py-20 bg-white">
@@ -103,7 +118,7 @@ const Experience = () => {
                     <MapPin className="w-4 h-4 mr-2" />
                     <span>{exp.location}</span>
                   </div>
-                  <p className="mt-4 text-gray-600">
+                  <p className="mt-4 text-gray-600 whitespace-pre-line">
                     {exp.description}
                   </p>
                 </div>
