@@ -4,24 +4,19 @@ import { Briefcase, Calendar, MapPin } from 'lucide-react';
 const Experience = () => {
   const experiences = [
     {
-      position: 'Application Developer',
+      position: 'IT Intern',
+      company: 'Jadeed Feed, Shahkot',
+      location: 'Shahkot, Pakistan',
+      period: '03/04/2025 – Current',
+      description: `Currently working in the IT department, assisting with technical support, system maintenance, data entry, and network monitoring. I contribute to software installation, ERP systems, documentation, and help maintain the organization's IT operations efficiently.`,
+      icon: <Briefcase className="w-8 h-8 text-indigo-600" />
+    },
+    {
+      position: 'Application Developer (Part-time)',
       company: 'Freelance, Pakistan',
       location: 'Shahkot, Pakistan',
       period: '01/07/2022 – Current',
-      description: `
-        • Performance Optimization  
-        • Smooth UI/UX Design  
-        • State Management  
-        • Native Modules & Third-Party Integrations  
-        • Clean Code Practices  
-        • Networking & Real-Time Data Management  
-        • Authentication & Security Implementation  
-        • Fast & Scalable Development  
-        • Testing & Debugging  
-        • Code Reusability & Modularization  
-        • App Deployment  
-        • Multi-Language Support
-      `,
+      description: `As a freelance React Native developer, I focus on building scalable and high-performance mobile applications with smooth UI/UX. My work includes state management, integration of native modules and third-party libraries, authentication, real-time data handling, and multilingual support. I follow clean code practices, emphasize reusability, and manage full app deployment cycles.`,
       icon: <Briefcase className="w-8 h-8 text-indigo-600" />
     },
     {
@@ -29,52 +24,15 @@ const Experience = () => {
       company: 'Government Graduate College Shahkot',
       location: 'Shahkot, Pakistan',
       period: '25/09/2024 – 25/12/2024',
-      description: `
-        • Assessment  
-        • Curriculum Development  
-        • Student Mentorship  
-        • Lab Supervision  
-        • Research  
-        • Collaboration with Faculty  
-        • Community Engagement  
-        • Professional Development  
-        • Ethical Teaching Practices  
-      `,
+      description: `Taught undergraduate computer science courses with a focus on assessment, curriculum design, and mentorship. Responsibilities included supervising lab sessions, guiding student projects, participating in faculty collaboration, engaging with the community, and promoting ethical teaching standards.`,
       icon: <Briefcase className="w-8 h-8 text-indigo-600" />
     },
     {
       position: 'Network Administrator',
       company: 'Mascot Fiber (Pvt) Ltd',
       location: 'Shahkot, Pakistan',
-      period: '10/10/2022 – 03/04/2025',
-      description: `
-        • Network Infrastructure Management  
-        • Fiber Optic Network Installation & Troubleshooting  
-        • Network Performance Monitoring  
-        • Security Protocols & Data Protection  
-        • IT Support & Troubleshooting  
-        • Network Expansion & System Upgrades  
-        • Maintenance, Updates & Backups  
-        • Staff Training on IT Resources  
-        • Managing Computers & Devices  
-        • Keeping Software & Security Updated  
-      `,
-      icon: <Briefcase className="w-8 h-8 text-indigo-600" />
-    },
-    {
-      position: 'IT Intern',
-      company: 'Jadeed Feed, Shahkot',
-      location: 'Shahkot, Pakistan',
-      period: '03/04/2025 – Current',
-      description: `
-        • IT Support & Troubleshooting  
-        • System Maintenance  
-        • Data Entry & Reporting  
-        • Assist in Network Monitoring  
-        • Software Installation & Updates  
-        • Technical Documentation  
-        • Learning ERP Systems & IT Processes  
-      `,
+      period: '10/10/2022 – 25/09/2024',
+      description: `Managed network infrastructure, including fiber optic installation, performance monitoring, and IT support. Implemented security protocols, maintained systems and backups, provided staff training, and ensured seamless connectivity and protection of digital assets within the company.`,
       icon: <Briefcase className="w-8 h-8 text-indigo-600" />
     }
   ];
@@ -118,7 +76,7 @@ const Experience = () => {
                     <MapPin className="w-4 h-4 mr-2" />
                     <span>{exp.location}</span>
                   </div>
-                  <p className="mt-4 text-gray-600 whitespace-pre-line">
+                  <p className="mt-4 text-gray-600">
                     {exp.description}
                   </p>
                 </div>
