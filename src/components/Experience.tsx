@@ -8,7 +8,11 @@ const Experience = () => {
       company: 'Jadeed Feed, Shahkot',
       location: 'Shahkot, Pakistan',
       period: '03/04/2025 – Current',
-      description: `Currently working in the IT department, assisting with technical support, system maintenance, data entry, and network monitoring. I contribute to software installation, ERP systems, documentation, and help maintain the organization's IT operations efficiently.`,
+      description: `As an IT Intern at Jadeed Feed, I assist with the maintenance and troubleshooting of computer networks and hardware systems. My
+responsibilities include installing and configuring surveillance cameras (CCTV), setting up workstations, diagnosing and resolving
+hardware/software issues, and supporting routine IT operations. I also help with system upgrades, printer and peripheral setup,
+basic network cabling, operating system installation, and ensuring the smooth functioning of daily IT infrastructure. This hands-on
+role is strengthening my skills in IT support, system installation, and network management within a corporate environment`,
       icon: <Briefcase className="w-8 h-8 text-indigo-600" />
     },
     {
