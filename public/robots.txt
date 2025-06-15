@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://iamsaad.netlify.app/sitemap.xml
