@@ -79,10 +79,10 @@ export const projects = [
   "githubLink": "https://github.com/iamsaadrandhawa/tenant-management-app", 
   "liveLink": "https://your-live-demo-link-here"
 },
-{
+ {
     "title": "NVR Automation Tool",
     "description": "A Python tool that checks NVR and camera status, detects offline IPs, syncs time via Chrome, and generates daily Excel reports automatically.",
-    "image": "https://fastcabling.com/wp-content/uploads/2020/04/64-ch-network-video-recorder-768x768.jpg",
+    "image": "https://www.sparshsecuritech.com/assets/images/temp/10797a6e91531a1e3e2c4a542258a2ed.jpg",
     "technologies": ["Python", "asyncio", "Selenium", "Excel"],
     "githubLink": "https://github.com/iamsaadrandhawa/nvr-automation-tool",
     "liveLink": "https://your-live-demo-link-here"
