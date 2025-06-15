@@ -78,7 +78,15 @@ export const projects = [
   "technologies": ["React Native", "Firebase", "Firestore"],
   "githubLink": "https://github.com/iamsaadrandhawa/tenant-management-app", 
   "liveLink": "https://your-live-demo-link-here"
-}
+},
+  {
+    "title": "NVR Automation Tool",
+    "description": "Designed and developed an NVR Automation Tool using Python to streamline the monitoring and synchronization of Network Video Recorders (NVRs). This tool automates the process of checking camera availability and detects offline cameras by IP, generating daily Excel reports. Additionally, it verifies and synchronizes the time and date of all NVRs via Chrome browser automation, ensuring accurate and reliable surveillance data.",
+    "image": "https://www.securitymagazine.com/ext/resources/SEC/2023/February/SEC0223-Video-Surveillance.jpg", 
+    "technologies": ["Python", "Asyncio", "Excel Automation", "Selenium"],
+    "githubLink": "https://github.com/iamsaadrandhawa/nvr-automation-tool",
+    "liveLink": "https://your-live-demo-link-here"
+  }
 
 
 ];
