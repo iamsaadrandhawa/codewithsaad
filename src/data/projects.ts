@@ -79,14 +79,13 @@ export const projects = [
   "githubLink": "https://github.com/iamsaadrandhawa/tenant-management-app", 
   "liveLink": "https://your-live-demo-link-here"
 },
-  {
+ {
     "title": "NVR Automation Tool",
-    "description": "Designed and developed an NVR Automation Tool using Python to streamline the monitoring and synchronization of Network Video Recorders (NVRs). This tool automates the process of checking camera availability and detects offline cameras by IP, generating daily Excel reports. Additionally, it verifies and synchronizes the time and date of all NVRs via Chrome browser automation, ensuring accurate and reliable surveillance data.",
-    "image": "https://www.securitymagazine.com/ext/resources/SEC/2023/February/SEC0223-Video-Surveillance.jpg", 
-    "technologies": ["Python", "Asyncio", "Excel Automation", "Selenium"],
+    "description": "Designed and implemented an NVR Automation Tool with Python to automate the monitoring and maintenance of Network Video Recorders. Built using asyncio and Selenium, the tool checks camera IPs to detect offline devices, generates daily Excel reports listing any offline cameras, and synchronizes the date/time settings of all NVR units via Chrome automation—ensuring accurate, up-to-date surveillance systems.",
+    "image": "https://blog.koorsen.com/wp-content/uploads/2021/10/network-video-recorder-camera.jpg",
+    "technologies": ["Python", "asyncio", "Selenium", "Excel Automation"],
     "githubLink": "https://github.com/iamsaadrandhawa/nvr-automation-tool",
     "liveLink": "https://your-live-demo-link-here"
   }
-
 
 ];
