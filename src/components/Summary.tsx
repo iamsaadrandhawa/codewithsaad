@@ -8,7 +8,7 @@ const Summary = () => {
         <div className="text-center">
           <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">Professional Summary</h2>
           <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
-            Full Stack Developer specializing in React Native and modern web technologies with a proven track record of delivering high-quality mobile and web applications.
+           Full Stack Developer specializing in React Native and Node.js, with a strong background in IT networking. Experienced in building scalable mobile applications and managing secure, efficient network infrastructures. Combines software development and networking expertise to deliver integrated, high-performance solutions.
           </p>
         </div>
 
