@@ -23,6 +23,13 @@ const Certifications = () => {
       date: "2023",
       recipient: "Saad Ali Muhammad Arshad",
       link: "https://drive.google.com/file/d/1iq-7ZpjTOmICYzHE4VD2av4maFWN12j-/view?usp=sharing"
+    },
+     {
+      name: "Introduction to IoT and Digital Transformation",
+      issuer: "Cisco Networking Academy",
+      date: "2025",
+      recipient: "Saad Ali Muhammad Arshad",
+      link: "https://drive.google.com/file/d/1sqKdNoIERcGxtlo8Sc4nX8byWOO_D76G/view?usp=sharing"
     }
   ];
 
