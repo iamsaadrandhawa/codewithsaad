@@ -30,6 +30,13 @@ const Certifications = () => {
       date: "2025",
       recipient: "Saad Ali Muhammad Arshad",
       link: "https://drive.google.com/file/d/1sqKdNoIERcGxtlo8Sc4nX8byWOO_D76G/view?usp=sharing"
+    },
+    {
+      name: "Ethical Hacker",
+      issuer: "Cisco Networking Academy",
+      date: "2025",
+      recipient: "Saad Ali Muhammad Arshad",
+      link: "https://drive.google.com/file/d/1TI-ASqVsnjnQRgsWOzz4M180wd54uoYF/view?usp=sharing"
     }
   ];
 
