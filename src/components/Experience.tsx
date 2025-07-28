@@ -5,7 +5,7 @@ const Experience = () => {
   const experiences = [
     {
       position: 'IT Intern',
-      company: 'Jadeed Feed, Shahkot',
+      company: 'Jadeed Group of Companies',
       location: 'Shahkot, Pakistan',
       period: '03/04/2025 – Current',
       description: `As an IT Intern at Jadeed Feed, I assist with the maintenance and troubleshooting of computer networks and hardware systems. My
