@@ -7,7 +7,7 @@ const Experience = () => {
       position: 'IT Intern',
       company: 'Jadeed Group of Companies',
       location: 'Shahkot, Pakistan',
-      period: '03/04/2025 – 03/07/2025',
+      period: '03/04/2025 – current',
       description: `As an IT Intern at Jadeed Feed, I assist with the maintenance and troubleshooting of computer networks and hardware systems. My
 responsibilities include installing and configuring surveillance cameras (CCTV), setting up workstations, diagnosing and resolving
 hardware/software issues, and supporting routine IT operations. I also help with system upgrades, printer and peripheral setup,
