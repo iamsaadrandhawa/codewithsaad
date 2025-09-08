@@ -37,7 +37,15 @@ const Certifications = () => {
       date: "2025",
       recipient: "Saad Ali Muhammad Arshad",
       link: "https://drive.google.com/file/d/1TI-ASqVsnjnQRgsWOzz4M180wd54uoYF/view?usp=sharing"
+    }, {
+      name: "Python Essentials 1",
+      issuer: "Cisco Networking Academy",
+      date: "2025",
+      recipient: "Saad Ali Muhammad Arshad",
+      link: "https://drive.google.com/file/d/18eYUu8t-oRmcSzm1vOwpBjpPvuIRigcu/view?usp=sharing"
     }
+    
+  
   ];
 
   return (
