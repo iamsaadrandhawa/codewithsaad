@@ -1,89 +1,188 @@
-import React from 'react';
-import { Briefcase, Calendar, MapPin } from 'lucide-react';
+import React from "react";
+import { Calendar, MapPin } from "lucide-react";
 
 const Experience = () => {
   const experiences = [
     {
-      position: 'IT Intern',
-      company: 'Jadeed Group of Companies',
-      location: 'Shahkot, Pakistan',
-      period: '03/04/2025 – current',
-      description: `As an IT Intern at Jadeed Feed, I assist with the maintenance and troubleshooting of computer networks and hardware systems. My
-responsibilities include installing and configuring surveillance cameras (CCTV), setting up workstations, diagnosing and resolving
-hardware/software issues, and supporting routine IT operations. I also help with system upgrades, printer and peripheral setup,
-basic network cabling, operating system installation, and ensuring the smooth functioning of daily IT infrastructure. This hands-on
-role is strengthening my skills in IT support, system installation, and network management within a corporate environment`,
-      icon: <Briefcase className="w-8 h-8 text-indigo-600" />
+      position: "IT Intern",
+      company: "Jadeed Group of Companies",
+      location: "Shahkot, Pakistan",
+      period: "03/04/2025 – current",
+      description:
+        "Installed CCTV, configured operating systems, resolved hardware/software issues, supported IT operations.",
+      skills: [
+        "CCTV",
+        "Networking",
+        "Troubleshooting",
+        "OS Setup",
+        "Hardware Support",
+        "Software Installation",
+        "IT Support",
+        "Maintenance",
+        "Configuration",
+        "Customer Service",
+        "Problem Solving",
+        "Remote Support",
+      ],
+      gradient: "from-blue-400 to-cyan-400",
+      logo: "https://jadeedgroup.com/wp-content/uploads/2024/07/jadeed-logo.png"
     },
     {
-      position: 'Application Developer (Part-time)',
-      company: 'Freelance, Pakistan',
-      location: 'Shahkot, Pakistan',
-      period: '01/07/2022 – Current',
-      description: `As a freelance React Native developer, I focus on building scalable and high-performance mobile applications with smooth UI/UX. My work includes state management, integration of native modules and third-party libraries, authentication, real-time data handling, and multilingual support. I follow clean code practices, emphasize reusability, and manage full app deployment cycles.`,
-      icon: <Briefcase className="w-8 h-8 text-indigo-600" />
+      position: "Mern Stack Developer",
+      company: "Freelance",
+      location: "Pakistan",
+      period: "01/07/2022 – Present",
+      description:
+        "Developed mobile/Web apps using React Native/JS with modern UI/UX and scalable architecture.",
+      skills: [
+        "React Native",
+        "React JS",
+        "Node.js",
+        "MongoDB",
+        "UI/UX",
+        "APIs",
+        "Authentication",
+        "State Management",
+        "Responsive Design",
+        "Version Control",
+        "mySQL",
+        "Deployment",
+      ],
+      gradient: "from-purple-400 to-pink-400",
+      logo: "https://www.f-cdn.com/assets/main/en/assets/freelancer-logo-light.svg"
     },
     {
-      position: 'Computer Science Lecturer',
-      company: 'Government Graduate College Shahkot',
-      location: 'Shahkot, Pakistan',
-      period: '25/09/2024 – 25/12/2024',
-      description: `Taught undergraduate computer science courses with a focus on assessment, curriculum design, and mentorship. Responsibilities included supervising lab sessions, guiding student projects, participating in faculty collaboration, engaging with the community, and promoting ethical teaching standards.`,
-      icon: <Briefcase className="w-8 h-8 text-indigo-600" />
+      position: "Computer Science Lecturer",
+      company: "Govt. Graduate College Shahkot",
+      location: "Shahkot",
+      period: "25/09/2024 – 25/12/2024",
+      description:
+        "Taught CS courses, supervised labs, designed assignments and guided student projects.",
+      skills: [
+        "Teaching",
+        "Labs",
+        "Curriculum",
+        "Mentorship",
+        "Assessment",
+        "Student Engagement",
+        "Course Design",
+        "Communication",
+        "Time Management",
+        "Problem Solving",
+        "Collaboration",
+        "Adaptability",
+      ],
+      gradient: "from-indigo-400 to-purple-400",
+      logo: "https://punjab.gov.pk/sites/punjab.gov.pk/themes/bootstrap_subtheme/logo.png"
     },
     {
-      position: 'Network Administrator',
-      company: 'Mascot Fiber (Pvt) Ltd',
-      location: 'Shahkot, Pakistan',
-      period: '10/10/2022 – 25/09/2024',
-      description: `Managed network infrastructure, including fiber optic installation, performance monitoring, and IT support. Implemented security protocols, maintained systems and backups, provided staff training, and ensured seamless connectivity and protection of digital assets within the company.`,
-      icon: <Briefcase className="w-8 h-8 text-indigo-600" />
-    }
+      position: "Network Administrator",
+      company: "Mascot Fiber (Pvt) Ltd",
+      location: "Shahkot",
+      period: "10/10/2022 – 25/09/2024",
+      description:
+        "Managed fiber network infrastructure, ensured stable connectivity and security protocols.",
+      skills: [
+        "Fiber Optical",
+        "Routing",
+        "Security",
+        "Monitoring",
+        "Troubleshooting",
+        "Maintenance",
+        "Configuration",
+        "Mikrotick",
+        "Switches",
+        "Firewalls",
+        "Network Design",
+      ],
+      gradient: "from-amber-400 to-orange-400",
+      logo: "https://root.mascotfibernet.com/admin/assets/images/logo-dark.png"
+    },
   ];
 
   return (
-    <section id="experience" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
-            Professional Experience
-          </h2>
-          <p className="mt-4 text-lg text-gray-500">
-            My journey in the tech industry
-          </p>
-        </div>
+    <section id="experience" className="py-20 bg-white relative">
+      {/* Center Line */}
+      <div className="absolute left-1/2 top-60 transform -translate-x-1/2 w-1 h-[80%] bg-gradient-to-b from-cyan-400 to-indigo-400"></div>
 
-        <div className="mt-12 space-y-8">
+      <div className="max-w-7xl mx-auto px-6">
+        <h2 className="text-center text-3xl font-extrabold text-gray-900 sm:text-4xl">
+          Professional Experience
+        </h2>
+        <p className="text-center mt-4 text-lg text-gray-500">
+          A growing tree representing my career growth
+        </p>
+
+        <div className="mt-20 space-y-20 relative z-10">
           {experiences.map((exp, index) => (
-            <div
-              key={index}
-              className="bg-gray-50 rounded-lg shadow-lg p-6 transform transition duration-300 hover:scale-[1.02]"
-            >
-              <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0">{exp.icon}</div>
-                <div className="flex-1">
-                  <div className="flex justify-between items-start">
-                    <div>
+            <div key={index} className={`relative flex items-center w-full ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
+              
+              {/* Timeline Dot */}
+              {/* <div className={`absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-gradient-to-r ${exp.gradient} border-4 border-white shadow-lg z-20`}></div> */}
+
+              {/* Experience Card */}
+              <div className={`w-5/6 md:w-2/3 lg:w-1/2 relative ${index % 2 === 0 ? 'pr-8' : 'pl-8'}`}>
+                <div className="relative bg-white border border-gray-200 rounded-2xl shadow-xl hover:scale-[1.02] transition-all duration-500">
+                  {/* Colored Top Bar */}
+                  <div className={`h-2 bg-gradient-to-r ${exp.gradient}`}></div>
+
+                  <div className="p-6 flex">
+                    {/* Content - Left Side */}
+                    <div className="flex-1">
+                      {/* Position */}
                       <h3 className="text-xl font-semibold text-gray-900">
                         {exp.position}
                       </h3>
-                      <p className="mt-1 text-lg text-indigo-600">
-                        {exp.company}
-                      </p>
+
+                      {/* Company */}
+                      <p className="text-indigo-600 font-medium">{exp.company}</p>
+
+                      {/* Period */}
+                      <div className="mt-2 flex items-center text-gray-500 text-sm">
+                        <Calendar className="w-4 h-4 mr-2" />
+                        {exp.period}
+                      </div>
+
+                      {/* Location */}
+                      <div className="flex items-center text-gray-500 text-sm">
+                        <MapPin className="w-4 h-4 mr-2" /> {exp.location}
+                      </div>
+
+                      <div className="my-4 w-full h-px bg-gray-200"></div>
+
+                      {/* Description */}
+                      <p className="text-gray-600 leading-relaxed text-sm">{exp.description}</p>
+
+                      {/* Skills */}
+                      <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-3">
+                        {exp.skills.map((skill, i) => (
+                          <span
+                            key={i}
+                            className={`px-2 py-1 text-xs rounded-full bg-gradient-to-r ${exp.gradient} text-white shadow-md text-center truncate`}
+                          >
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
                     </div>
-                    <div className="flex items-center text-gray-500">
-                      <Calendar className="w-4 h-4 mr-2" />
-                      <span>{exp.period}</span>
+
+                    {/* Logo - Right Side */}
+                    <div className="w-40 h-40 ml-6 self-center relative flex-shrink-0">
+                      <img
+                        src={exp.logo}
+                        alt={`${exp.company} Logo`}
+                        className="w-full h-full object-contain"
+                      />
                     </div>
                   </div>
-                  <div className="mt-2 flex items-center text-gray-500">
-                    <MapPin className="w-4 h-4 mr-2" />
-                    <span>{exp.location}</span>
-                  </div>
-                  <p className="mt-4 text-gray-600">
-                    {exp.description}
-                  </p>
                 </div>
+
+                {/* Connector Line to Timeline */}
+                <div className={`absolute top-1/2 transform -translate-y-1/1 w-8 h-1 bg-gradient-to-r ${
+                  index % 2 === 0 
+                    ? `${exp.gradient} right-8 translate-x-full` 
+                    : `${exp.gradient} left-70 -translate-x-full`
+                }`}></div>
               </div>
             </div>
           ))}

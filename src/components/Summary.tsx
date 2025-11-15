@@ -1,7 +1,66 @@
 import React from 'react';
-import { Code2, Globe, Server, Smartphone } from 'lucide-react';
+import { Code2, Globe, Server, Smartphone, Cpu, Zap, GitBranch, Database, Layout, Laptop } from 'lucide-react';
 
 const Summary = () => {
+ const skills = [
+    {
+      title: "Web Development",
+      subtitle: "React.js, Next.js, Tailwind CSS",
+      description: "Building modern, responsive, and high-performance websites.",
+      icon: <Laptop className="w-8 h-8 text-white" />,
+      gradient: "from-blue-400 to-cyan-400"
+    },
+    {
+      title: "Mobile Development",
+      subtitle: "React Native, Expo ",
+      description: "Creating cross-platform mobile applications with seamless user experiences.",
+      icon: <Smartphone  className="w-8 h-8 text-white" />,
+      gradient: "from-purple-400 to-pink-400"
+    },
+    {
+      title: "Backend Development",
+      subtitle: "Node.js, Express, APIs",
+      description: "Building secure, scalable backend systems and REST APIs.",
+      icon: <Server className="w-8 h-8 text-white" />,
+      gradient: "from-green-400 to-emerald-400"
+    },
+    {
+      title: "Database Systems",
+      subtitle: "MongoDB, MySQL, Firestore",
+      description: "Efficient data modeling & optimized database queries.",
+      icon: <Database className="w-8 h-8 text-white" />,
+      gradient: "from-amber-400 to-orange-400"
+    },
+    {
+      title: "Networking",
+      subtitle: "IT infrastructure, Mikrotik, Routing",
+      description: "Strong understanding of networking & secure infrastructures.",
+      icon: <Cpu className="w-8 h-8 text-white" />,
+      gradient: "from-indigo-400 to-purple-400"
+    },
+    {
+      title: "Clean Code",
+      subtitle: "Best practices, patterns",
+      description: "Writing maintainable, readable, and scalable code.",
+      icon: <Code2 className="w-8 h-8 text-white" />,
+      gradient: "from-pink-400 to-rose-400"
+    },
+    {
+      title: "API Integration",
+      subtitle: "3rd-party services & automation",
+      description: "Connecting apps with external services & automating workflows.",
+      icon: <Globe className="w-8 h-8 text-white" />,
+      gradient: "from-cyan-400 to-sky-400"
+    },
+    {
+      title: "Version Control",
+      subtitle: "Git, GitHub, CI/CD",
+      description: "Managing code efficiently with professional workflows.",
+      icon: <GitBranch className="w-8 h-8 text-white" />,
+      gradient: "from-slate-400 to-gray-500"
+    }
+  ];
+
   return (
     <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -12,28 +71,42 @@ const Summary = () => {
           </p>
         </div>
 
-        <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          <div className="bg-white p-6 rounded-lg shadow-lg">
-            <Smartphone className="w-12 h-12 text-indigo-600 mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Mobile Development</h3>
-            <p className="text-gray-600">1.5+ years of React Native expertise</p>
-          </div>
-          <div className="bg-white p-6 rounded-lg shadow-lg">
-  <Globe className="w-12 h-12 text-indigo-600 mb-4" />
-  <h3 className="text-xl font-semibold mb-2">Networking</h3>
-  <p className="text-gray-600">Networking and IT infrastructure</p>
-</div>
+        <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          {skills.map((skill, index) => (
+            <div
+              key={index}
+              className="group relative bg-brightgray-400 border border-gray-200 rounded-2xl shadow-2xl transform transition-all duration-500 hover:scale-105 hover:border-cyan-400/30 overflow-hidden"
+            >
+              {/* Gradient Top Bar */}
+              <div className={`h-2 bg-gradient-to-r ${skill.gradient}`}></div>
+              
+              <div className="p-6">
+                {/* Icon with Gradient Background */}
+                <div className={`inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-r ${skill.gradient} shadow-lg mb-4 transform group-hover:scale-110 transition-transform duration-300`}>
+                  {skill.icon}
+                </div>
 
-          <div className="bg-white p-6 rounded-lg shadow-lg">
-            <Server className="w-12 h-12 text-indigo-600 mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Backend Systems</h3>
-            <p className="text-gray-600">Node.js & database expertise</p>
-          </div>
-          <div className="bg-white p-6 rounded-lg shadow-lg">
-            <Code2 className="w-12 h-12 text-indigo-600 mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Clean Code</h3>
-            <p className="text-gray-600">Best practices & patterns</p>
-          </div>
+                {/* Skill Title */}
+                <h3 className="text-xl font-semibold text-black">
+                  {skill.title}
+                </h3>
+
+                {/* Description */}
+                <p className="mt-2 text-gray-600">
+                  {skill.description}
+                </p>
+
+                {/* Skill Level Indicator */}
+                <div className="mt-4 flex items-center text-sm text-cyan-400">
+                  <div className="w-2 h-2 bg-cyan-400 rounded-full mr-2 animate-pulse"></div>
+                  Expert Level
+                </div>
+              </div>
+
+              {/* Hover Effect Glow */}
+              <div className={`absolute inset-0 bg-gradient-to-r ${skill.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500 rounded-2xl pointer-events-none`}></div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
