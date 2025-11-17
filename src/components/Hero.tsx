@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { ArrowRight, Download, Star, Github, Code, Smartphone, Globe, Search } from 'lucide-react';
+import { ArrowRight, Download, Star, Github, Code, Smartphone, Globe, Search, Linkedin } from 'lucide-react';
 import TypeWriter from './TypeWriter';
 import './Hero.css';
 
@@ -33,6 +33,14 @@ const Hero = () => {
 
     return () => observer.disconnect();
   }, []);
+
+  const handleWorkTogether = () => {
+  const subject = "Let's Work Together - Project Inquiry";
+  const body = `Hello Saad,\n\nI came across your portfolio and I'm interested in working with you on a project.\n\nHere's what I have in mind:\n\n[Briefly describe your project]\n\nLooking forward to discussing this further!\n\nBest regards,\n[Your Name]`;
+  
+  const mailtoLink = `mailto:saadrandhawa03@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  window.location.href = mailtoLink;
+};
 
   return (
     <section
@@ -149,48 +157,84 @@ const Hero = () => {
 
       {/* Tech Icons Floating Around - Adjusted positions for larger circle */}
       <div className="tech-icons-container">
-        {/* GitHub Icon */}
-        <div className="tech-icon-item github-icon">
-          <div className="tech-icon-wrapper bg-gray-800 border border-gray-600">
-            <Github className="w-6 h-6 text-white" />
-          </div>
-        </div>
+  {/* GitHub Icon */}
+  <a 
+    href="https://github.com/iamsaadrandhawa" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="tech-icon-item github-icon group"
+  >
+    <div className="tech-icon-wrapper bg-gray-800 border border-gray-600 group-hover:bg-gray-700 group-hover:border-gray-500 group-hover:scale-110 transition-all duration-300">
+      <Github className="w-6 h-6 text-white" />
+    </div>
+    
+  </a>
 
-        {/* VSCode Icon */}
-        <div className="tech-icon-item vscode-icon">
-          <div className="tech-icon-wrapper bg-blue-600 border border-blue-400">
-            <Code className="w-6 h-6 text-white" />
-          </div>
-        </div>
+  {/* VSCode Icon */}
+  <a 
+    href="https://code.visualstudio.com/" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="tech-icon-item vscode-icon group"
+  >
+    <div className="tech-icon-wrapper bg-blue-600 border border-blue-400 group-hover:bg-blue-500 group-hover:border-blue-300 group-hover:scale-110 transition-all duration-300">
+      <Code className="w-6 h-6 text-white" />
+    </div>
+    
+  </a>
 
-        {/* Android Icon */}
-        <div className="tech-icon-item android-icon">
-          <div className="tech-icon-wrapper bg-green-500 border border-green-400">
-            <Smartphone className="w-6 h-6 text-white" />
-          </div>
-        </div>
+  {/* Android Icon */}
+  <a 
+    href="https://play.google.com/store/apps/dev?id=YOUR_ANDROID_DEV_ID" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="tech-icon-item android-icon group"
+  >
+    <div className="tech-icon-wrapper bg-green-500 border border-green-400 group-hover:bg-green-400 group-hover:border-green-300 group-hover:scale-110 transition-all duration-300">
+      <Smartphone className="w-6 h-6 text-white" />
+    </div>
+   
+  </a>
 
-        {/* iOS Icon */}
-        <div className="tech-icon-item ios-icon">
-          <div className="tech-icon-wrapper bg-gray-100 border border-gray-300">
-            <Smartphone className="w-6 h-6 text-gray-800" />
-          </div>
-        </div>
+  {/* iOS Icon */}
+  <a 
+    href="https://apps.apple.com/developer/YOUR_APPLE_DEV_ID" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="tech-icon-item ios-icon group"
+  >
+    <div className="tech-icon-wrapper bg-gray-100 border border-gray-300 group-hover:bg-white group-hover:border-gray-400 group-hover:scale-110 transition-all duration-300">
+      <Smartphone className="w-6 h-6 text-gray-800" />
+    </div>
+    
+  </a>
 
-        {/* Web Icon */}
-        <div className="tech-icon-item web-icon">
-          <div className="tech-icon-wrapper bg-purple-500 border border-purple-400">
-            <Globe className="w-6 h-6 text-white" />
-          </div>
-        </div>
+  {/* Web Icon */}
+  <a 
+    href="https://iamsaad.netlify.app/" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="tech-icon-item web-icon group"
+  >
+    <div className="tech-icon-wrapper bg-purple-500 border border-purple-400 group-hover:bg-purple-400 group-hover:border-purple-300 group-hover:scale-110 transition-all duration-300">
+      <Globe className="w-6 h-6 text-white" />
+    </div>
+    
+  </a>
 
-        {/* SEO Icon */}
-        <div className="tech-icon-item seo-icon">
-          <div className="tech-icon-wrapper bg-orange-500 border border-orange-400">
-            <Search className="w-6 h-6 text-white" />
-          </div>
-        </div>
-      </div>
+  {/* SEO Icon */}
+  <a 
+    href="https://www.linkedin.com/in/iamsaadrandhawa" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="tech-icon-item seo-icon group"
+  >
+    <div className="tech-icon-wrapper bg-orange-500 border border-orange-400 group-hover:bg-orange-400 group-hover:border-orange-300 group-hover:scale-110 transition-all duration-300">
+      <Linkedin className="w-6 h-6 text-white" />
+    </div>
+   
+  </a>
+</div>
 
       {/* Rotating Tech Ring - Increased size to match larger circle */}
       <div className="absolute -inset-6 rounded-full border-2 border-cyan-400/30 animate-spin-slow pointer-events-none z-5"></div>
