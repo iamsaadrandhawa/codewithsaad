@@ -3,6 +3,10 @@ export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Space Grotesk', 'system-ui', 'sans-serif'],
+        futura: ['Futura', 'system-ui', 'sans-serif'],
+      },
       colors: {
         branch: {
           light: "#a3724f",
@@ -13,11 +17,9 @@ export default {
           green2: "#39b662",
         }
       },
-
       boxShadow: {
         glow: "0 0 25px rgba(0, 255, 200, 0.25)",
       },
-
       keyframes: {
         windSway: {
           "0%": { transform: "rotate(0deg)" },
@@ -34,7 +36,6 @@ export default {
           "100%": { transform: "translateX(0px) rotate(0deg)" },
         },
       },
-
       animation: {
         wind: "windSway 4s ease-in-out infinite",
         float: "floatUp 1s ease-out forwards",
