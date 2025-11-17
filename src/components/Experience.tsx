@@ -101,64 +101,60 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-12 md:py-20 bg-white relative">
-      {/* Center Line - Hidden on mobile, visible on medium screens and up */}
-      <div className="hidden md:block absolute left-1/2 top-60 transform -translate-x-1/2 w-1 h-[80%] bg-gradient-to-b from-cyan-400 to-indigo-400"></div>
+    <section id="experience" className="py-20 bg-white relative">
+      {/* Center Line */}
+      <div className="absolute left-1/2 top-60 transform -translate-x-1/2 w-1 h-[80%] bg-gradient-to-b from-cyan-400 to-indigo-400"></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <h2 className="text-center text-2xl sm:text-3xl font-extrabold text-gray-900 sm:text-4xl">
+      <div className="max-w-7xl mx-auto px-6">
+        <h2 className="text-center text-3xl font-extrabold text-gray-900 sm:text-4xl">
           Professional Experience
         </h2>
-        <p className="text-center mt-4 text-base sm:text-lg text-gray-500">
+        <p className="text-center mt-4 text-lg text-gray-500">
           A growing tree representing my career growth
         </p>
 
-        <div className="mt-12 md:mt-20 space-y-12 md:space-y-20 relative z-10">
+        <div className="mt-20 space-y-20 relative z-10">
           {experiences.map((exp, index) => (
-            <div key={index} className="relative w-full">
+            <div key={index} className={`relative flex items-center w-full ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
               
-              {/* Timeline Dot for Mobile */}
-              <div className="md:hidden absolute left-4 top-6 w-3 h-3 rounded-full bg-gradient-to-r from-cyan-400 to-indigo-400 border-2 border-white shadow-lg z-20"></div>
-              
-              {/* Timeline Dot for Desktop */}
-              <div className={`hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-gradient-to-r ${exp.gradient} border-4 border-white shadow-lg z-20`}></div>
+              {/* Timeline Dot */}
+              {/* <div className={`absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-gradient-to-r ${exp.gradient} border-4 border-white shadow-lg z-20`}></div> */}
 
               {/* Experience Card */}
-              <div className="w-full md:w-5/6 lg:w-2/3 xl:w-1/2 ml-0 md:ml-auto relative md:relative md:left-1/2 md:transform md:-translate-x-1/2">
-                <div className="relative bg-white border border-gray-200 rounded-2xl shadow-lg md:shadow-xl hover:scale-[1.02] transition-all duration-500 ml-8 md:ml-0">
+              <div className={`w-5/6 md:w-2/3 lg:w-1/2 relative ${index % 2 === 0 ? 'pr-8' : 'pl-8'}`}>
+                <div className="relative bg-white border border-gray-200 rounded-2xl shadow-xl hover:scale-[1.02] transition-all duration-500">
                   {/* Colored Top Bar */}
                   <div className={`h-2 bg-gradient-to-r ${exp.gradient}`}></div>
 
-                  <div className="p-4 sm:p-6 flex flex-col md:flex-row">
-                    {/* Content - Top on mobile, Left on desktop */}
-                    <div className="flex-1 order-2 md:order-1">
+                  <div className="p-6 flex">
+                    {/* Content - Left Side */}
+                    <div className="flex-1">
                       {/* Position */}
-                      <h3 className="text-lg sm:text-xl font-semibold text-gray-900">
+                      <h3 className="text-xl font-semibold text-gray-900">
                         {exp.position}
                       </h3>
 
                       {/* Company */}
-                      <p className="text-indigo-600 font-medium text-sm sm:text-base">{exp.company}</p>
+                      <p className="text-indigo-600 font-medium">{exp.company}</p>
 
                       {/* Period */}
-                      <div className="mt-2 flex items-center text-gray-500 text-xs sm:text-sm">
-                        <Calendar className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
+                      <div className="mt-2 flex items-center text-gray-500 text-sm">
+                        <Calendar className="w-4 h-4 mr-2" />
                         {exp.period}
                       </div>
 
                       {/* Location */}
-                      <div className="flex items-center text-gray-500 text-xs sm:text-sm">
-                        <MapPin className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" /> 
-                        {exp.location}
+                      <div className="flex items-center text-gray-500 text-sm">
+                        <MapPin className="w-4 h-4 mr-2" /> {exp.location}
                       </div>
 
-                      <div className="my-3 sm:my-4 w-full h-px bg-gray-200"></div>
+                      <div className="my-4 w-full h-px bg-gray-200"></div>
 
                       {/* Description */}
-                      <p className="text-gray-600 leading-relaxed text-xs sm:text-sm">{exp.description}</p>
+                      <p className="text-gray-600 leading-relaxed text-sm">{exp.description}</p>
 
                       {/* Skills */}
-                      <div className="mt-3 sm:mt-4 grid grid-cols-2 sm:grid-cols-3 gap-1 sm:gap-2">
+                      <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-3">
                         {exp.skills.map((skill, i) => (
                           <span
                             key={i}
@@ -170,8 +166,8 @@ const Experience = () => {
                       </div>
                     </div>
 
-                    {/* Logo - Top on mobile, Right on desktop */}
-                    <div className="w-20 h-20 sm:w-32 sm:h-32 md:w-40 md:h-40 mx-auto md:mx-0 md:ml-6 mb-4 md:mb-0 self-center relative flex-shrink-0 order-1 md:order-2">
+                    {/* Logo - Right Side */}
+                    <div className="w-40 h-40 ml-6 self-center relative flex-shrink-0">
                       <img
                         src={exp.logo}
                         alt={`${exp.company} Logo`}
@@ -181,11 +177,11 @@ const Experience = () => {
                   </div>
                 </div>
 
-                {/* Connector Line to Timeline - Desktop only */}
-                <div className={`hidden md:block absolute top-1/2 transform -translate-y-1/2 w-8 h-1 bg-gradient-to-r ${
+                {/* Connector Line to Timeline */}
+                <div className={`absolute top-1/2 transform -translate-y-1/1 w-8 h-1 bg-gradient-to-r ${
                   index % 2 === 0 
                     ? `${exp.gradient} right-8 translate-x-full` 
-                    : `${exp.gradient} left-8 -translate-x-full`
+                    : `${exp.gradient} left-70 -translate-x-full`
                 }`}></div>
               </div>
             </div>
