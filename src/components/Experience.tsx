@@ -113,7 +113,7 @@ const Experience = () => {
           A growing tree representing my career growth
         </p>
 
-        <div className="mt-20 space-y-20 relative z-10">
+        <div className="mt-12 space-y-16 relative z-10">
           {experiences.map((exp, index) => (
             <div key={index} className={`relative flex items-center w-full ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
               
@@ -130,28 +130,28 @@ const Experience = () => {
                     {/* Content - Left Side */}
                     <div className="flex-1">
                       {/* Position */}
-                      <h3 className="text-xl font-semibold text-gray-900">
+                      <h3 className="text-lg font-semibold text-gray-900">
                         {exp.position}
                       </h3>
 
                       {/* Company */}
-                      <p className="text-indigo-600 font-medium">{exp.company}</p>
+                      <p className="text-indigo-600 font-medium text-sm">{exp.company}</p>
 
                       {/* Period */}
-                      <div className="mt-2 flex items-center text-gray-500 text-sm">
-                        <Calendar className="w-4 h-4 mr-2" />
+                      <div className="mt-2 flex items-center text-gray-500 text-xs">
+                        <Calendar className="w-3 h-3 mr-2" />
                         {exp.period}
                       </div>
 
                       {/* Location */}
-                      <div className="flex items-center text-gray-500 text-sm">
-                        <MapPin className="w-4 h-4 mr-2" /> {exp.location}
+                      <div className="flex items-center text-gray-500 text-xs">
+                        <MapPin className="w-3 h-3 mr-2" /> {exp.location}
                       </div>
 
-                      <div className="my-4 w-full h-px bg-gray-200"></div>
+                      <div className="my-3 w-full h-px bg-gray-200"></div>
 
                       {/* Description */}
-                      <p className="text-gray-600 leading-relaxed text-sm">{exp.description}</p>
+                      <p className="text-gray-600 leading-relaxed text-xs">{exp.description}</p>
 
                       {/* Skills */}
                       <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-3">
@@ -167,7 +167,7 @@ const Experience = () => {
                     </div>
 
                     {/* Logo - Right Side */}
-                    <div className="w-40 h-40 ml-6 self-center relative flex-shrink-0">
+                    <div className="w-32 h-32 ml-6 self-center relative flex-shrink-0">
                       <img
                         src={exp.logo}
                         alt={`${exp.company} Logo`}

@@ -10,6 +10,7 @@ import Certifications from './components/Certifications';
 import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 
+
 function App() {
   return (
     <div className="min-h-screen bg-white">

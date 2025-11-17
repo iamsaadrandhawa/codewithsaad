@@ -74,7 +74,7 @@ export const projects = [
   {
   "title": "Tenant Management App",
   "description": "Developed a Tenant Management App using React Native, Firebase, and Firestore, allowing property owners to efficiently manage tenant details, track rent payments, and view payment history. Features include tenant search, dynamic rent status updates, and an intuitive UI for smooth user experience.",
-  "image": "https://propertymanagementnyc.co/wp-content/uploads/2024/10/BLOG-1.png", 
+  "image": "https://res.cloudinary.com/realcube/image/upload/v1669396766/assets/img/Blogs/how-does-a-property-management-system-work.jpg", 
   "technologies": ["React Native", "Firebase", "Firestore"],
   "githubLink": "https://github.com/iamsaadrandhawa/tenant-management-app", 
   "liveLink": "https://your-live-demo-link-here"
@@ -82,7 +82,7 @@ export const projects = [
  {
     "title": "NVR Automation Tool",
     "description": "A Python tool that checks NVR and camera status, detects offline IPs, syncs time via Chrome, and generates daily Excel reports automatically.",
-    "image": "https://www.sparshsecuritech.com/assets/images/temp/10797a6e91531a1e3e2c4a542258a2ed.jpg",
+    "image": "https://www.hikvision.com/content/hikvision/en/newsroom/latest-news/2024/hikvision-launches-the-latest-nvr-5-0-to-revolutionize-the-product-experience/_jcr_content/root/responsivegrid/image_1683309092.coreimg.100.1280.jpeg/1708677476733/02-text-nvr-5.0.jpeg",
     "technologies": ["Python", "asyncio", "Selenium", "Excel"],
     "githubLink": "https://github.com/iamsaadrandhawa/nvr-automation-tool",
     "liveLink": "https://your-live-demo-link-here"
