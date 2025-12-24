@@ -4,10 +4,10 @@ import { Calendar, MapPin } from "lucide-react";
 const Experience = () => {
   const experiences = [
     {
-      position: "IT Intern",
+      position: "Assistant IT Officer",
       company: "Jadeed Group of Companies",
       location: "Shahkot, Pakistan",
-      period: "03/04/2025 – current",
+      period: "1/07/2025 – current",
       description:
         "Installed CCTV, configured operating systems, resolved hardware/software issues, supported IT operations.",
       skills: [
