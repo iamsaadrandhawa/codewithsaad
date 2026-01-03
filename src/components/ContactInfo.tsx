@@ -14,7 +14,7 @@ const ContactInfo = () => {
             href="mailto:saadrandhawa03@gmail.com" 
             className="mt-1 text-xs text-gray-300 hover:text-cyan-400 transition-colors duration-300 flex items-center group/link"
           >
-            saadrandhawa03@gmail.com
+            iamsaadrandhawa@gmail.com
             <ExternalLink className="w-3 h-3 ml-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300" />
           </a>
         </div>
@@ -64,7 +64,7 @@ const ContactInfo = () => {
           </a>
           
           <a 
-            href="https://www.linkedin.com/in/iamsaadali" 
+            href="https://www.linkedin.com/in/iamsaadrandhawa" 
             target="_blank" 
             rel="noopener noreferrer"
             className="group flex items-center justify-center w-10 h-10 rounded-lg bg-white/10 border border-white/20 text-gray-300 hover:bg-white/20 hover:text-white hover:border-blue-400/30 transition-all duration-300 backdrop-blur-sm"
