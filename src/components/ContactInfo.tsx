@@ -64,7 +64,7 @@ const ContactInfo = () => {
           </a>
           
           <a 
-            href="https://www.linkedin.com/in/iamsaadrandhawa" 
+            href="https://www.linkedin.com/in/iamsaadali" 
             target="_blank" 
             rel="noopener noreferrer"
             className="group flex items-center justify-center w-10 h-10 rounded-lg bg-white/10 border border-white/20 text-gray-300 hover:bg-white/20 hover:text-white hover:border-blue-400/30 transition-all duration-300 backdrop-blur-sm"
