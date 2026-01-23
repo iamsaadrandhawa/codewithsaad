@@ -59,12 +59,6 @@ const Testimonials = () => {
   },
   
   {
-    text: "Reliable, punctual, and highly skilled. Saad is a gem to work with.",
-    author: "Sakura Yamamoto",
-    rating: 5,
-    gradient: 'from-fuchsia-400 to-purple-400'
-  },
-  {
     text: "Saad's attention to UI/UX details made our app stand out from competitors.",
     author: "Wei Zhang",
     rating: 5,
@@ -89,24 +83,14 @@ const Testimonials = () => {
     gradient: 'from-purple-400 to-indigo-400'
   },
   
-  {
-    text: "Working with Saad was smooth and efficient. He understood our vision perfectly.",
-    author: "Rohan Sharma",
-    rating: 5,
-    gradient: 'from-blue-400 to-indigo-400'
-  },
+ 
   {
     text: "Saad's testing strategies ensured our app launched without any critical bugs.",
     author: "Hana Kim",
     rating: 5,
     gradient: 'from-green-400 to-teal-400'
   },
-  {
-    text: "The documentation Saad provided made future maintenance very straightforward.",
-    author: "Takashi Ito",
-    rating: 5,
-    gradient: 'from-red-400 to-orange-400'
-  },
+
   {
     text: "Saad's cross-platform development skills saved us time and money.",
     author: "Priyanka Das",
@@ -137,12 +121,7 @@ const Testimonials = () => {
     rating: 5,
     gradient: 'from-indigo-400 to-blue-400'
   },
-  {
-    text: "Saad's state management solution made our app's data flow predictable.",
-    author: "Hiroshi Kimura",
-    rating: 5,
-    gradient: 'from-pink-400 to-purple-400'
-  },
+  
   {
     text: "The caching strategy Saad implemented reduced our server load significantly.",
     author: "Preeti Singh",
@@ -155,12 +134,7 @@ const Testimonials = () => {
     rating: 5,
     gradient: 'from-amber-400 to-orange-400'
   },
-  {
-    text: "Outstanding all-around developer who delivers exceptional results consistently.",
-    author: "Rajiv Kapoor",
-    rating: 5,
-    gradient: 'from-purple-400 to-indigo-400'
-  }
+
 ];
 
   const scrollContainerRef = useRef(null);
