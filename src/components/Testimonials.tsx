@@ -34,12 +34,6 @@ const Testimonials = () => {
     gradient: 'from-indigo-400 to-purple-400'
   },
   {
-    text: "Professional, skilled, and reliable. Would definitely work with Saad again on future projects.",
-    author: "Raj Patel",
-    rating: 5,
-    gradient: 'from-teal-400 to-blue-400'
-  },
-  {
     text: "Saad transformed our business with his mobile app development skills. Excellent work!",
     author: "Yuki Nakamura",
     rating: 5,
@@ -63,12 +57,7 @@ const Testimonials = () => {
     rating: 5,
     gradient: 'from-lime-400 to-green-400'
   },
-  {
-    text: "Saad's technical knowledge is impressive. He solved complex problems with ease.",
-    author: "Arjun Kumar",
-    rating: 5,
-    gradient: 'from-sky-400 to-blue-400'
-  },
+  
   {
     text: "Reliable, punctual, and highly skilled. Saad is a gem to work with.",
     author: "Sakura Yamamoto",
@@ -99,12 +88,7 @@ const Testimonials = () => {
     rating: 5,
     gradient: 'from-purple-400 to-indigo-400'
   },
-  {
-    text: "Saad's expertise in state management improved our app's reliability significantly.",
-    author: "Maya Wong",
-    rating: 5,
-    gradient: 'from-pink-400 to-rose-400'
-  },
+  
   {
     text: "Working with Saad was smooth and efficient. He understood our vision perfectly.",
     author: "Rohan Sharma",
@@ -134,132 +118,6 @@ const Testimonials = () => {
     author: "Chen Wei",
     rating: 5,
     gradient: 'from-teal-400 to-cyan-400'
-  },
-  {
-    text: "Saad's API integration work was flawless and efficient.",
-    author: "Yumi Takahashi",
-    rating: 5,
-    gradient: 'from-purple-400 to-pink-400'
-  },
-  {
-    text: "The animations and transitions Saad implemented enhanced user experience greatly.",
-    author: "Aarav Gupta",
-    rating: 5,
-    gradient: 'from-yellow-400 to-amber-400'
-  },
-  {
-    text: "Saad's security implementations gave us confidence in our app's safety.",
-    author: "Sora Tanaka",
-    rating: 5,
-    gradient: 'from-blue-400 to-cyan-400'
-  },
-  {
-    text: "Outstanding performance optimization skills. Our app runs smoothly on all devices.",
-    author: "Neha Kapoor",
-    rating: 5,
-    gradient: 'from-green-400 to-emerald-400'
-  },
-  {
-    text: "Saad's code review process improved our entire team's coding standards.",
-    author: "Kenji Watanabe",
-    rating: 5,
-    gradient: 'from-orange-400 to-red-400'
-  },
-  {
-    text: "The deployment process Saad set up made our releases stress-free.",
-    author: "Anika Patel",
-    rating: 5,
-    gradient: 'from-purple-400 to-indigo-400'
-  },
-  {
-    text: "Saad's database design optimized our app's data management significantly.",
-    author: "Ravi Singh",
-    rating: 5,
-    gradient: 'from-cyan-400 to-blue-400'
-  },
-  {
-    text: "Excellent mentor who helped our junior developers grow their skills.",
-    author: "Mei Chen",
-    rating: 5,
-    gradient: 'from-pink-400 to-rose-400'
-  },
-  {
-    text: "Saad's error handling implementation made our app extremely stable.",
-    author: "Haruki Sato",
-    rating: 5,
-    gradient: 'from-emerald-400 to-green-400'
-  },
-  {
-    text: "The analytics integration Saad implemented provided valuable user insights.",
-    author: "Divya Sharma",
-    rating: 5,
-    gradient: 'from-blue-400 to-indigo-400'
-  },
-  {
-    text: "Saad's push notification system increased our user engagement by 40%.",
-    author: "Yuto Kobayashi",
-    rating: 5,
-    gradient: 'from-orange-400 to-amber-400'
-  },
-  {
-    text: "Excellent third-party service integration skills.",
-    author: "Pooja Mehta",
-    rating: 5,
-    gradient: 'from-purple-400 to-pink-400'
-  },
-  {
-    text: "Saad's offline functionality implementation was flawless.",
-    author: "Kaito Nakamura",
-    rating: 5,
-    gradient: 'from-green-400 to-teal-400'
-  },
-  {
-    text: "The accessibility features Saad added made our app inclusive for all users.",
-    author: "Sunita Roy",
-    rating: 5,
-    gradient: 'from-red-400 to-pink-400'
-  },
-  {
-    text: "Saad's internationalization work helped us expand to global markets.",
-    author: "Ren Tanaka",
-    rating: 5,
-    gradient: 'from-indigo-400 to-purple-400'
-  },
-  {
-    text: "Excellent debugging skills that saved us countless hours.",
-    author: "Aisha Khan",
-    rating: 5,
-    gradient: 'from-cyan-400 to-teal-400'
-  },
-  {
-    text: "Saad's architecture decisions made our codebase maintainable and scalable.",
-    author: "Daichi Yamaguchi",
-    rating: 5,
-    gradient: 'from-blue-400 to-purple-400'
-  },
-  {
-    text: "The performance monitoring Saad set up helped us identify issues proactively.",
-    author: "Nisha Verma",
-    rating: 5,
-    gradient: 'from-green-400 to-lime-400'
-  },
-  {
-    text: "Saad's cloud integration work was seamless and efficient.",
-    author: "Ryota Suzuki",
-    rating: 5,
-    gradient: 'from-orange-400 to-yellow-400'
-  },
-  {
-    text: "Excellent team player who collaborated effectively with our designers.",
-    author: "Mira Joshi",
-    rating: 5,
-    gradient: 'from-purple-400 to-violet-400'
-  },
-  {
-    text: "Saad's testing automation saved us significant time in quality assurance.",
-    author: "Sho Tanaka",
-    rating: 5,
-    gradient: 'from-red-400 to-orange-400'
   },
   {
     text: "The code documentation Saad provided was comprehensive and clear.",
