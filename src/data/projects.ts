@@ -80,11 +80,11 @@ export const projects = [
   "liveLink": "https://your-live-demo-link-here"
 },
  {
-    "title": "NVR Automation Tool",
+    "title": "NVR SyncGuard",
     "description": "A Python tool that checks NVR and camera status, detects offline IPs, syncs time via Chrome, and generates daily Excel reports automatically.",
-    "image": "https://www.hikvision.com/content/hikvision/en/newsroom/latest-news/2024/hikvision-launches-the-latest-nvr-5-0-to-revolutionize-the-product-experience/_jcr_content/root/responsivegrid/image_1683309092.coreimg.100.1280.jpeg/1708677476733/02-text-nvr-5.0.jpeg",
+    "image": "https://drive.google.com/file/d/1VtVcSTCW7m2ILDoVhGIq9vY1oXDmxJzm/view?usp=sharing",
     "technologies": ["Python", "asyncio", "Selenium", "Excel"],
-    "githubLink": "https://github.com/iamsaadrandhawa/nvr-automation-tool",
+    "githubLink": "https://github.com/iamsaadrandhawa/nvr-SyncGuard",
     "liveLink": "https://your-live-demo-link-here"
   }
 ];
