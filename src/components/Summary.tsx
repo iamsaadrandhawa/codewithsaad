@@ -1,113 +1,163 @@
-import React from 'react';
-import { Code2, Globe, Server, Smartphone, Cpu, Zap, GitBranch, Database, Layout, Laptop } from 'lucide-react';
+import { ReactNode } from 'react';
+import { Code2, Globe, Server, Smartphone, Cpu, GitBranch, Database, LayoutGrid as Layout, Radio, ShieldCheck, Network, Wifi } from 'lucide-react';
+import Reveal from './Reveal';
+import SectionHeading from './SectionHeading';
+
+interface Skill {
+  title: string;
+  subtitle: string;
+  description: string;
+  icon: ReactNode;
+  kind: 'dev' | 'net';
+}
+
+const devSkills: Skill[] = [
+  {
+    title: 'Web Development',
+    subtitle: 'React.js, Next.js, Tailwind CSS',
+    description: 'Modern, responsive, high-performance web apps.',
+    icon: <Layout className="w-6 h-6" />,
+    kind: 'dev',
+  },
+  {
+    title: 'Mobile Development',
+    subtitle: 'React Native, Expo',
+    description: 'Cross-platform mobile apps with seamless UX.',
+    icon: <Smartphone className="w-6 h-6" />,
+    kind: 'dev',
+  },
+  {
+    title: 'Backend Development',
+    subtitle: 'Node.js, Express, REST APIs',
+    description: 'Secure, scalable backend systems and APIs.',
+    icon: <Server className="w-6 h-6" />,
+    kind: 'dev',
+  },
+  {
+    title: 'Database Systems',
+    subtitle: 'MongoDB, MySQL, Firestore',
+    description: 'Efficient data modeling and optimized queries.',
+    icon: <Database className="w-6 h-6" />,
+    kind: 'dev',
+  },
+];
+
+const netSkills: Skill[] = [
+  {
+    title: 'Network Infrastructure',
+    subtitle: 'Fiber, Routing, Mikrotik',
+    description: 'Designing and managing resilient network topologies.',
+    icon: <Network className="w-6 h-6" />,
+    kind: 'net',
+  },
+  {
+    title: 'Security & Firewalls',
+    subtitle: 'Firewalls, Access Control',
+    description: 'Hardening infrastructure with secure access policies.',
+    icon: <ShieldCheck className="w-6 h-6" />,
+    kind: 'net',
+  },
+  {
+    title: 'Connectivity',
+    subtitle: 'Switches, VLANs, WAN',
+    description: 'Stable, monitored connectivity across sites.',
+    icon: <Wifi className="w-6 h-6" />,
+    kind: 'net',
+  },
+  {
+    title: 'IT Operations',
+    subtitle: 'CCTV, OS Setup, Support',
+    description: 'End-to-end IT support and infrastructure maintenance.',
+    icon: <Radio className="w-6 h-6" />,
+    kind: 'net',
+  },
+];
+
+const extraChips = [
+  { icon: <Code2 className="w-4 h-4" />, label: 'Clean Code' },
+  { icon: <Globe className="w-4 h-4" />, label: 'API Integration' },
+  { icon: <GitBranch className="w-4 h-4" />, label: 'Version Control' },
+  { icon: <Cpu className="w-4 h-4" />, label: 'Automation' },
+];
+
+const SkillCard = ({ skill }: { skill: Skill }) => {
+  const accent = skill.kind === 'dev' ? 'text-accent' : 'text-signal-400';
+  return (
+    <div className="card-surface card-surface-hover p-5 h-full group">
+      <div className="flex items-start gap-4">
+        <div
+          className={`shrink-0 w-11 h-11 rounded-lg border border-white/10 bg-white/[0.03] flex items-center justify-center ${accent} group-hover:border-accent/30 transition-colors duration-300`}
+        >
+          {skill.icon}
+        </div>
+        <div className="min-w-0">
+          <h3 className="text-base font-semibold text-white">{skill.title}</h3>
+          <p className="text-xs text-slate-500 mt-0.5">{skill.subtitle}</p>
+        </div>
+      </div>
+      <p className="mt-4 text-sm text-slate-400 leading-relaxed">
+        {skill.description}
+      </p>
+      <div className="mt-4 accent-rule" />
+    </div>
+  );
+};
 
 const Summary = () => {
- const skills = [
-    {
-      title: "Web Development",
-      subtitle: "React.js, Next.js, Tailwind CSS",
-      description: "Building modern, responsive, and high-performance websites.",
-      icon: <Laptop className="w-8 h-8 text-white" />,
-      gradient: "from-blue-400 to-cyan-400"
-    },
-    {
-      title: "Mobile Development",
-      subtitle: "React Native, Expo ",
-      description: "Creating cross-platform mobile applications with seamless user experiences.",
-      icon: <Smartphone  className="w-8 h-8 text-white" />,
-      gradient: "from-purple-400 to-pink-400"
-    },
-    {
-      title: "Backend Development",
-      subtitle: "Node.js, Express, APIs",
-      description: "Building secure, scalable backend systems and REST APIs.",
-      icon: <Server className="w-8 h-8 text-white" />,
-      gradient: "from-green-400 to-emerald-400"
-    },
-    {
-      title: "Database Systems",
-      subtitle: "MongoDB, MySQL, Firestore",
-      description: "Efficient data modeling & optimized database queries.",
-      icon: <Database className="w-8 h-8 text-white" />,
-      gradient: "from-amber-400 to-orange-400"
-    },
-    {
-      title: "Networking",
-      subtitle: "IT infrastructure, Mikrotik, Routing",
-      description: "Strong understanding of networking & secure infrastructures.",
-      icon: <Cpu className="w-8 h-8 text-white" />,
-      gradient: "from-indigo-400 to-purple-400"
-    },
-    {
-      title: "Clean Code",
-      subtitle: "Best practices, patterns",
-      description: "Writing maintainable, readable, and scalable code.",
-      icon: <Code2 className="w-8 h-8 text-white" />,
-      gradient: "from-pink-400 to-rose-400"
-    },
-    {
-      title: "API Integration",
-      subtitle: "3rd-party services & automation",
-      description: "Connecting apps with external services & automating workflows.",
-      icon: <Globe className="w-8 h-8 text-white" />,
-      gradient: "from-cyan-400 to-sky-400"
-    },
-    {
-      title: "Version Control",
-      subtitle: "Git, GitHub, CI/CD",
-      description: "Managing code efficiently with professional workflows.",
-      icon: <GitBranch className="w-8 h-8 text-white" />,
-      gradient: "from-slate-400 to-gray-500"
-    }
-  ];
-
   return (
-    <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">Professional Summary</h2>
-          <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
-           Full Stack Developer specializing in React Native and Node.js, with a strong background in IT networking. Experienced in building scalable mobile applications and managing secure, efficient network infrastructures. Combines software development and networking expertise to deliver integrated, high-performance solutions.
-          </p>
-        </div>
+    <section className="py-24 bg-ink-900 relative">
+      <div className="absolute inset-0 bg-circuit bg-circuit-fade opacity-30" aria-hidden />
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <SectionHeading
+          eyebrow="Professional Summary"
+          title="Two disciplines, one engineer"
+          description="Full-stack developer specializing in React Native and Node.js, with a strong background in IT networking — building scalable applications and managing secure, efficient infrastructure."
+        />
 
-        <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {skills.map((skill, index) => (
-            <div
-              key={index}
-              className="group relative bg-brightgray-400 border border-gray-200 rounded-2xl shadow-2xl transform transition-all duration-500 hover:scale-105 hover:border-cyan-400/30 overflow-hidden"
-            >
-              {/* Gradient Top Bar */}
-              <div className={`h-2 bg-gradient-to-r ${skill.gradient}`}></div>
-              
-              <div className="p-6">
-                {/* Icon with Gradient Background */}
-                <div className={`inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-r ${skill.gradient} shadow-lg mb-4 transform group-hover:scale-110 transition-transform duration-300`}>
-                  {skill.icon}
-                </div>
-
-                {/* Skill Title */}
-                <h3 className="text-xl font-semibold text-black">
-                  {skill.title}
-                </h3>
-
-                {/* Description */}
-                <p className="mt-2 text-gray-600">
-                  {skill.description}
-                </p>
-
-                {/* Skill Level Indicator */}
-                <div className="mt-4 flex items-center text-sm text-cyan-400">
-                  <div className="w-2 h-2 bg-cyan-400 rounded-full mr-2 animate-pulse"></div>
-                  Expert Level
-                </div>
-              </div>
-
-              {/* Hover Effect Glow */}
-              <div className={`absolute inset-0 bg-gradient-to-r ${skill.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500 rounded-2xl pointer-events-none`}></div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <Reveal>
+            <div className="flex items-center gap-3 mb-4">
+              <span className="text-xs font-semibold tracking-widest text-accent uppercase">
+                Development
+              </span>
+              <span className="flex-1 h-px bg-gradient-to-r from-accent/40 to-transparent" />
             </div>
-          ))}
+            <div className="grid sm:grid-cols-2 gap-4">
+              {devSkills.map((s) => (
+                <SkillCard key={s.title} skill={s} />
+              ))}
+            </div>
+          </Reveal>
+
+          <Reveal delay={120}>
+            <div className="flex items-center gap-3 mb-4">
+              <span className="text-xs font-semibold tracking-widest text-signal-400 uppercase">
+                Networking
+              </span>
+              <span className="flex-1 h-px bg-gradient-to-r from-signal-400/40 to-transparent" />
+            </div>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {netSkills.map((s) => (
+                <SkillCard key={s.title} skill={s} />
+              ))}
+            </div>
+          </Reveal>
         </div>
+
+        {/* Extra chips */}
+        <Reveal delay={200} className="mt-10">
+          <div className="flex flex-wrap justify-center gap-3">
+            {extraChips.map((c) => (
+              <span
+                key={c.label}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/[0.02] text-sm text-slate-300 hover:border-accent/30 hover:text-white transition-colors duration-200"
+              >
+                <span className="text-accent">{c.icon}</span>
+                {c.label}
+              </span>
+            ))}
+          </div>
+        </Reveal>
       </div>
     </section>
   );

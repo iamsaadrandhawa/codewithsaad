@@ -5,41 +5,69 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Space Grotesk', 'system-ui', 'sans-serif'],
-        futura: ['Futura', 'system-ui', 'sans-serif'],
       },
       colors: {
-        branch: {
-          light: "#a3724f",
-          dark: "#5b3c29",
+        ink: {
+          950: '#070A0F',
+          900: '#0B0F14',
+          850: '#0F1620',
+          800: '#131C28',
+          700: '#1A2533',
+          600: '#243041',
+          500: '#334155',
         },
-        leaf: {
-          green1: "#5ccf73",
-          green2: "#39b662",
-        }
+        accent: {
+          DEFAULT: '#22D3EE',
+          50: '#ECFEFF',
+          100: '#CFFAFE',
+          200: '#A5F3FC',
+          300: '#67E8F9',
+          400: '#22D3EE',
+          500: '#06B6D4',
+          600: '#0891B2',
+          700: '#0E7490',
+        },
+        signal: {
+          DEFAULT: '#818CF8',
+          400: '#A5B4FC',
+          500: '#818CF8',
+          600: '#6366F1',
+        },
       },
       boxShadow: {
-        glow: "0 0 25px rgba(0, 255, 200, 0.25)",
+        glow: '0 0 24px rgba(34, 211, 238, 0.18)',
+        'glow-sm': '0 0 12px rgba(34, 211, 238, 0.12)',
+        card: '0 1px 0 0 rgba(255,255,255,0.04) inset, 0 12px 40px -12px rgba(0,0,0,0.6)',
       },
       keyframes: {
-        windSway: {
-          "0%": { transform: "rotate(0deg)" },
-          "50%": { transform: "rotate(2deg)" },
-          "100%": { transform: "rotate(0deg)" },
+        fadeRise: {
+          '0%': { opacity: '0', transform: 'translateY(24px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
         },
-        floatUp: {
-          "0%": { transform: "translateY(10px)", opacity: 0 },
-          "100%": { transform: "translateY(0)", opacity: 1 },
+        pulseSignal: {
+          '0%, 100%': { opacity: '1', transform: 'scale(1)' },
+          '50%': { opacity: '0.6', transform: 'scale(1.15)' },
         },
-        leafMove: {
-          "0%": { transform: "translateX(0px) rotate(0deg)" },
-          "50%": { transform: "translateX(4px) rotate(2deg)" },
-          "100%": { transform: "translateX(0px) rotate(0deg)" },
+        drift: {
+          '0%': { transform: 'translate(0,0)' },
+          '50%': { transform: 'translate(8px,-6px)' },
+          '100%': { transform: 'translate(0,0)' },
+        },
+        dash: {
+          '0%': { strokeDashoffset: '40' },
+          '100%': { strokeDashoffset: '0' },
+        },
+        blink: {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0' },
         },
       },
       animation: {
-        wind: "windSway 4s ease-in-out infinite",
-        float: "floatUp 1s ease-out forwards",
-        leaf: "leafMove 3s ease-in-out infinite",
+        'fade-rise': 'fadeRise 0.7s cubic-bezier(0.22,1,0.36,1) forwards',
+        'pulse-signal': 'pulseSignal 2.4s ease-in-out infinite',
+        drift: 'drift 9s ease-in-out infinite',
+        dash: 'dash 1.4s linear infinite',
+        blink: 'blink 1.1s step-end infinite',
       },
     },
   },

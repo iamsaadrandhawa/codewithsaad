@@ -35,7 +35,7 @@ const TypeWriter: React.FC<TypeWriterProps> = ({ words, delay = 2000 }) => {
     return () => clearTimeout(timeout);
   }, [currentText, isDeleting, currentWordIndex, words, delay]);
 
-  return <span className="text-indigo-600">{currentText}<span className="animate-pulse">|</span></span>;
+  return <span className="text-accent-gradient">{currentText}<span className="animate-blink">|</span></span>;
 };
 
 export default TypeWriter;

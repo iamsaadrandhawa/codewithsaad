@@ -1,254 +1,156 @@
-import React, { useEffect, useRef } from 'react';
-import { ArrowRight, Download, Star, Github, Code, Smartphone, Globe, Search, Linkedin } from 'lucide-react';
+import { ArrowRight, Download, Github, Code, Smartphone, Globe, Linkedin, Radio } from 'lucide-react';
 import TypeWriter from './TypeWriter';
-import './Hero.css';
+import NetworkGraph from './NetworkGraph';
+
+const titles = [
+  'MERN-Stack Developer',
+  'React-Native Expert',
+  'Network Engineer',
+  'CS Lecturer',
+];
+
+const techCluster = [
+  { icon: <Github className="w-5 h-5" />, label: 'GitHub', href: 'https://github.com/iamsaadrandhawa' },
+  { icon: <Code className="w-5 h-5" />, label: 'Code', href: 'https://code.visualstudio.com/' },
+  { icon: <Smartphone className="w-5 h-5" />, label: 'Mobile', href: 'https://play.google.com/store' },
+  { icon: <Globe className="w-5 h-5" />, label: 'Web', href: '#projects' },
+  { icon: <Linkedin className="w-5 h-5" />, label: 'LinkedIn', href: 'https://www.linkedin.com/in/iamsaadrandhawa' },
+];
+
+const stats = [
+  { value: '50+', label: 'Projects' },
+  { value: '5+', label: 'Years Exp' },
+  { value: '98%', label: 'Success' },
+];
 
 const Hero = () => {
-  const titles = [
-    "Mern-Stack Developer",
-    "React-Native Expert",
-    "Network Expert",
-    "CS Lecturer"
-  ];
-
-  const heroRef = useRef(null);
-  const imageRef = useRef(null);
-  const textRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate-in');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    if (heroRef.current) observer.observe(heroRef.current);
-    if (imageRef.current) observer.observe(imageRef.current);
-    if (textRef.current) observer.observe(textRef.current);
-
-    return () => observer.disconnect();
-  }, []);
-
-  const handleWorkTogether = () => {
-  const subject = "Let's Work Together - Project Inquiry";
-  const body = `Hello Saad,\n\nI came across your portfolio and I'm interested in working with you on a project.\n\nHere's what I have in mind:\n\n[Briefly describe your project]\n\nLooking forward to discussing this further!\n\nBest regards,\n[Your Name]`;
-  
-  const mailtoLink = `mailto:saadrandhawa03@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  window.location.href = mailtoLink;
-};
-
   return (
     <section
       id="home"
-      ref={heroRef}
-      className="hero-section pt-20 pb-32 bg-gradient-to-br from-gray-900 via-blue-900 to-gray-800 relative overflow-hidden"
+      className="relative min-h-screen flex items-center pt-28 pb-20 overflow-hidden bg-ink-900"
     >
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0">
-        <div className="floating-shapes">
-          <div className="shape shape-1"></div>
-          <div className="shape shape-2"></div>
-          <div className="shape shape-3"></div>
-          <div className="shape shape-4"></div>
-        </div>
-        <div className="grid-pattern"></div>
+      {/* Background layers */}
+      <div className="absolute inset-0 bg-circuit bg-circuit-fade opacity-70" aria-hidden />
+      <NetworkGraph className="opacity-60" />
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            'radial-gradient(ellipse 60% 50% at 50% 35%, rgba(34,211,238,0.10), transparent 70%)',
+        }}
+        aria-hidden
+      />
+      <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent to-ink-900 pointer-events-none" aria-hidden />
 
-        {/* Animated Gradient Orbs */}
-        <div className="gradient-orb orb-1"></div>
-        <div className="gradient-orb orb-2"></div>
-        <div className="gradient-orb orb-3"></div>
-      </div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 relative z-10">
-        <div className="flex flex-col md:flex-row items-center justify-between">
-          {/* Text Content */}
-          <div ref={textRef} className="md:w-1/2 text-center md:text-left transform transition-all duration-1000">
-            {/* Badge */}
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/20 mb-6 animate-float">
-              <Star className="w-4 h-4 text-yellow-400 mr-2" />
-              <span className="text-sm font-medium text-indigo-200">Available for Projects</span>
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="grid lg:grid-cols-12 gap-12 items-center">
+          {/* Text */}
+          <div className="lg:col-span-7 text-center lg:text-left">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-accent/30 bg-accent/[0.06] mb-6 animate-fade-rise">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full rounded-full bg-accent/60 animate-ping" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-accent" />
+              </span>
+              <span className="text-xs font-medium tracking-wide text-accent-200">
+                Available for projects
+              </span>
             </div>
 
-            <h1 className="text-4xl tracking-tight font-bold text-white sm:text-5xl md:text-6xl lg:text-7xl">
-              <span className="block opacity-0 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-                Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-400 animate-gradient">Saad</span>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.05]">
+              <span className="block animate-fade-rise" style={{ animationDelay: '0.1s', opacity: 0 }}>
+                Hi, I'm{' '}
+                <span className="text-accent-gradient">Saad</span>
               </span>
-              <span className="block h-20 mt-4 opacity-0 text-5xl animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-             
-               <TypeWriter words={titles} />
-              
+              <span
+                className="block mt-3 text-2xl sm:text-3xl lg:text-4xl font-medium text-slate-200 animate-fade-rise"
+                style={{ animationDelay: '0.25s', opacity: 0 }}
+              >
+                <TypeWriter words={titles} />
               </span>
             </h1>
 
-            <p className="mt-6 text-lg text-gray-300 sm:text-xl md:mt-8 md:text-2xl max-w-2xl opacity-0 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
-              Building <span className="text-cyan-400 font-semibold animate-pulse-slow">scalable, cross-platform</span> mobile apps with React Native.
-              Expert in <span className="text-indigo-400 font-semibold animate-pulse-slow" style={{ animationDelay: '1s' }}>network architecture</span> and seamless connectivity solutions.
+            <p
+              className="mt-6 text-base sm:text-lg text-slate-400 max-w-xl mx-auto lg:mx-0 animate-fade-rise"
+              style={{ animationDelay: '0.4s', opacity: 0 }}
+            >
+              I build scalable cross-platform apps with React Native and design
+              resilient network infrastructure — fiber, Mikrotik, CCTV and IT
+              operations. One engineer for both worlds.
             </p>
 
             {/* Stats */}
-            <div className="flex flex-wrap gap-6 mt-8 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
-              <div className="text-center transform hover:scale-110 transition-transform duration-300">
-                <div className="text-2xl font-bold text-white bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">50+</div>
-                <div className="text-sm text-gray-400">Projects</div>
-              </div>
-              <div className="text-center transform hover:scale-110 transition-transform duration-300">
-                <div className="text-2xl font-bold text-white bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">5+</div>
-                <div className="text-sm text-gray-400">Years Exp</div>
-              </div>
-              <div className="text-center transform hover:scale-110 transition-transform duration-300">
-                <div className="text-2xl font-bold text-white bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">98%</div>
-                <div className="text-sm text-gray-400">Success</div>
-              </div>
+            <div
+              className="mt-8 flex flex-wrap justify-center lg:justify-start gap-8 animate-fade-rise"
+              style={{ animationDelay: '0.55s', opacity: 0 }}
+            >
+              {stats.map((s) => (
+                <div key={s.label} className="text-center lg:text-left">
+                  <div className="text-2xl font-bold text-white">{s.value}</div>
+                  <div className="text-xs text-slate-500 mt-0.5">{s.label}</div>
+                </div>
+              ))}
             </div>
 
-            {/* CTA Buttons */}
-            <div className="mt-8 sm:flex sm:justify-start md:mt-12 space-y-4 sm:space-y-0 sm:space-x-4 opacity-0 animate-fade-in-up" style={{ animationDelay: '1s' }}>
-              <div className="rounded-lg shadow-2xl transform transition-all duration-300 hover:scale-105 hover:shadow-cyan-500/25">
-                <a
-                  href="#contact"
-                  className="w-full flex items-center justify-center px-8 py-4 border-2 border-transparent text-base font-semibold rounded-lg text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 md:py-5 md:text-lg md:px-12 transition-all duration-300 group relative overflow-hidden"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <span className="relative z-10">Let's work together</span>
-                  <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300 relative z-10" />
-                </a>
-              </div>
-              <div className="rounded-lg shadow-2xl transform transition-all duration-300 hover:scale-105 hover:shadow-indigo-500/25">
-                <a
-                  href="https://drive.google.com/file/d/1bF0dsGzxVg4eGRQl0TJAEE20ri0ztkKn/view?usp=sharing"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full flex items-center justify-center px-8 py-4 border-2 border-indigo-500 text-base font-semibold rounded-lg text-indigo-400 bg-indigo-500/10 hover:bg-indigo-500/20 md:py-5 md:text-lg md:px-12 transition-all duration-300 group relative overflow-hidden"
-                >
-                  <div className="absolute inset-0 bg-indigo-500 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
-                  <span className="relative z-10">Get Resume</span>
-                  <Download className="ml-3 w-5 h-5 group-hover:animate-bounce transition-transform duration-300 relative z-10" />
-                </a>
-              </div>
+            {/* CTAs */}
+            <div
+              className="mt-10 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start animate-fade-rise"
+              style={{ animationDelay: '0.7s', opacity: 0 }}
+            >
+              <a href="#contact" className="btn-primary group">
+                Let's build something
+                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+              </a>
+              <a
+                href="https://drive.google.com/file/d/1bF0dsGzxVg4eGRQl0TJAEE20ri0ztkKn/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-ghost group"
+              >
+                <Download className="mr-2 w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
+                Get Resume
+              </a>
             </div>
           </div>
 
-          {/* Image Section - Half Image Out of Circle */}
-         <div ref={imageRef} className="md:w-1/2 mt-12 md:mt-0 flex justify-center opacity-0 animate-fade-in-left">
-  <div className="relative">
-    {/* Animated Gradient Background - Increased Size */}
-    <div className="absolute inset-0 w-96 h-96 rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-cyan-500 blur-2xl opacity-30 animate-gradient-flow -z-10"></div>
+          {/* Photo + icon cluster */}
+          <div className="lg:col-span-5 flex justify-center lg:justify-end">
+            <div className="relative animate-fade-rise" style={{ animationDelay: '0.5s', opacity: 0 }}>
+              {/* Soft glow */}
+              <div className="absolute -inset-6 rounded-3xl bg-accent/10 blur-2xl pointer-events-none" aria-hidden />
 
-    {/* Main Circle Container - Increased Size */}
-    <div className="relative w-96 h-96">
-      {/* Circular Border Background - Increased Size */}
-      <div className="absolute inset-0 rounded-full border-4 border-white/20 bg-gradient-to-br from-gray-800 to-gray-900 shadow-2xl animate-border-glow z-10"></div>
+              {/* Frame */}
+              <div className="relative w-72 h-80 sm:w-80 sm:h-96 rounded-2xl border border-white/10 bg-ink-850 overflow-hidden shadow-card">
+                <img
+                  src="./saadali.png"
+                  alt="Saad Ali — Developer & Network Engineer"
+                  className="w-full h-full object-cover object-top"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink-900/70 via-transparent to-transparent" aria-hidden />
 
-      {/* Image Container - Half Out of Circle */}
-      <div className="relative w-full h-full rounded-full z-20 image-half-mask overflow-show">
-        <img
-          src='./saadali.png'
-          alt="Saad Ali - Professional Developer"
-          className="w-full h-full object-cover object-top scale-125 transform -translate-y-8 hover:scale-135 hover:-translate-y-10 transition-all duration-500 ease-out"
-        />
-        {/* Circle border */}
-        <div className="absolute inset-0 rounded-full border-white/20 pointer-events-none z-30"></div>
-      </div>
+                {/* Signal tag */}
+                <div className="absolute top-3 left-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-ink-950/70 backdrop-blur border border-white/10">
+                  <Radio className="w-3 h-3 text-accent animate-pulse-signal" />
+                  <span className="text-[10px] font-medium text-slate-300 tracking-wide">ONLINE</span>
+                </div>
+              </div>
 
-      {/* Tech Icons Floating Around - Adjusted positions for larger circle */}
-      <div className="tech-icons-container">
-  {/* GitHub Icon */}
-  <a 
-    href="https://github.com/iamsaadrandhawa" 
-    target="_blank" 
-    rel="noopener noreferrer"
-    className="tech-icon-item github-icon group"
-  >
-    <div className="tech-icon-wrapper bg-gray-800 border border-gray-600 group-hover:bg-gray-700 group-hover:border-gray-500 group-hover:scale-110 transition-all duration-300">
-      <Github className="w-6 h-6 text-white" />
-    </div>
-    
-  </a>
-
-  {/* VSCode Icon */}
-  <a 
-    href="https://code.visualstudio.com/" 
-    target="_blank" 
-    rel="noopener noreferrer"
-    className="tech-icon-item vscode-icon group"
-  >
-    <div className="tech-icon-wrapper bg-blue-600 border border-blue-400 group-hover:bg-blue-500 group-hover:border-blue-300 group-hover:scale-110 transition-all duration-300">
-      <Code className="w-6 h-6 text-white" />
-    </div>
-    
-  </a>
-
-  {/* Android Icon */}
-  <a 
-    href="https://play.google.com/store/apps/dev?id=YOUR_ANDROID_DEV_ID" 
-    target="_blank" 
-    rel="noopener noreferrer"
-    className="tech-icon-item android-icon group"
-  >
-    <div className="tech-icon-wrapper bg-green-500 border border-green-400 group-hover:bg-green-400 group-hover:border-green-300 group-hover:scale-110 transition-all duration-300">
-      <Smartphone className="w-6 h-6 text-white" />
-    </div>
-   
-  </a>
-
-  {/* iOS Icon */}
-  <a 
-    href="https://apps.apple.com/developer/YOUR_APPLE_DEV_ID" 
-    target="_blank" 
-    rel="noopener noreferrer"
-    className="tech-icon-item ios-icon group"
-  >
-    <div className="tech-icon-wrapper bg-gray-100 border border-gray-300 group-hover:bg-white group-hover:border-gray-400 group-hover:scale-110 transition-all duration-300">
-      <Smartphone className="w-6 h-6 text-gray-800" />
-    </div>
-    
-  </a>
-
-  {/* Web Icon */}
-  <a 
-    href="https://iamsaad.netlify.app/" 
-    target="_blank" 
-    rel="noopener noreferrer"
-    className="tech-icon-item web-icon group"
-  >
-    <div className="tech-icon-wrapper bg-purple-500 border border-purple-400 group-hover:bg-purple-400 group-hover:border-purple-300 group-hover:scale-110 transition-all duration-300">
-      <Globe className="w-6 h-6 text-white" />
-    </div>
-    
-  </a>
-
-  {/* SEO Icon */}
-  <a 
-    href="https://www.linkedin.com/in/iamsaadrandhawa" 
-    target="_blank" 
-    rel="noopener noreferrer"
-    className="tech-icon-item seo-icon group"
-  >
-    <div className="tech-icon-wrapper bg-orange-500 border border-orange-400 group-hover:bg-orange-400 group-hover:border-orange-300 group-hover:scale-110 transition-all duration-300">
-      <Linkedin className="w-6 h-6 text-white" />
-    </div>
-   
-  </a>
-</div>
-
-      {/* Rotating Tech Ring - Increased size to match larger circle */}
-      <div className="absolute -inset-6 rounded-full border-2 border-cyan-400/30 animate-spin-slow pointer-events-none z-5"></div>
-    </div>
-
-    {/* Experience Badge - Adjusted position for larger circle */}
-    <div className="absolute -bottom-6 right-16 bg-gradient-to-r from-cyan-400 to-blue-400 backdrop-blur-sm px-4 py-2 rounded-full shadow-xl z-30 transform hover:scale-105 transition-transform duration-300 animate-pulse-slow">
-      <div className="text-sm font-bold text-gray-900 flex items-center">
-        <Star className="w-3 h-3 mr-1 text-yellow-600" />
-        5+ Years Experience
-      </div>
-    </div>
-  </div>
-</div>
+              {/* Icon cluster below */}
+              <div className="mt-5 flex items-center justify-center gap-2.5">
+                {techCluster.map((t) => (
+                  <a
+                    key={t.label}
+                    href={t.href}
+                    target={t.href.startsWith('http') ? '_blank' : undefined}
+                    rel={t.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                    aria-label={t.label}
+                    className="w-10 h-10 rounded-lg flex items-center justify-center border border-white/10 bg-ink-850 text-slate-400 hover:text-accent hover:border-accent/40 transition-colors duration-200"
+                  >
+                    {t.icon}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

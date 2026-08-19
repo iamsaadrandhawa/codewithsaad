@@ -1,5 +1,4 @@
-import React from 'react';
-import { ExternalLink, Github, Smartphone, Globe, ShoppingCart } from 'lucide-react';
+import { Github, Smartphone, Globe } from 'lucide-react';
 
 interface ProjectCardProps {
   title: string;
@@ -10,11 +9,9 @@ interface ProjectCardProps {
   liveLink: string;
   appStoreLink?: string;
   playStoreLink?: string;
-
-  sellerEmail?: string; // Your email address to receive inquiries
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({
+const ProjectCard = ({
   title,
   description,
   image,
@@ -23,121 +20,97 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   liveLink,
   appStoreLink,
   playStoreLink,
-  sellerEmail = "your-email@gmail.com" // Your default email
-}) => {
-  const gradients = [
-    'from-purple-400 to-pink-400',
-    'from-blue-400 to-cyan-400',
-    'from-green-400 to-emerald-400',
-    'from-orange-400 to-red-400',
-    'from-indigo-400 to-purple-400',
-    'from-teal-400 to-blue-400'
-  ];
-
-  const randomGradient = gradients[Math.floor(Math.random() * gradients.length)];
-
-
+}: ProjectCardProps) => {
   return (
-    <div className="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl shadow-2xl transform transition-all duration-500 hover:scale-105 hover:bg-white/10 hover:border-purple-400/30 overflow-hidden flex flex-col h-full">
-  {/* Gradient Top Bar */}
-  <div className={`h-2 bg-gradient-to-r ${randomGradient}`}></div>
-  
-  <div className="p-6 flex flex-col flex-1">
-    {/* Project Image */}
-    <div className="relative overflow-hidden rounded-xl mb-4 transform group-hover:scale-105 transition-transform duration-300">
-      <img 
-        className="w-full h-48 object-cover" 
-        src={image} 
-        alt={title} 
-      />
-      <div className={`absolute inset-0 bg-gradient-to-r ${randomGradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
-    </div>
-
-    {/* Project Title */}
-    <h3 className="text-lg font-semibold text-white">
-      {title}
-    </h3>
-
-    {/* Project Description */}
-    <p className="mt-3 text-gray-300 leading-relaxed flex-1 text-sm">
-      {description}
-    </p>
-
-    {/* Technologies */}
-    <div className="mt-4 flex flex-wrap gap-2">
-      {technologies.map((tech, index) => (
-        <span
-          key={index}
-          className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-white/10 text-gray-300 border border-white/20 backdrop-blur-sm"
-        >
-          {tech}
-        </span>
-      ))}
-    </div>
-
-    {/* Action Links - Fixed at bottom */}
-    <div className="mt-6 flex flex-col gap-3 pt-4 border-t border-white/10">
-      {/* Primary Actions Row */}
-      <div className="flex items-center gap-3">
-        {/* Always show Code button */}
-        <a
-          href={githubLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center px-3 py-2 rounded-lg bg-white/10 border border-white/20 text-gray-300 hover:bg-white/20 hover:text-white transition-all duration-300 backdrop-blur-sm flex-1 justify-center text-xs"
-        >
-          <Github className="w-3 h-3 mr-2" />
-          Code
-        </a>
-        
-        {/* Show Demo button if liveLink exists */}
-        {liveLink && (
-          <a
-            href={liveLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center px-3 py-2 rounded-lg bg-white/10 border border-white/20 text-gray-300 hover:bg-white/20 hover:text-white transition-all duration-300 backdrop-blur-sm flex-1 justify-center text-xs"
-          >
-            <Globe className="w-3 h-3 mr-2" />
-            Demo
-          </a>
-        )}
+    <div className="card-surface card-surface-hover flex flex-col h-full overflow-hidden group">
+      {/* Image */}
+      <div className="relative overflow-hidden h-44">
+        <img
+          src={image}
+          alt={title}
+          loading="lazy"
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink-850 via-ink-850/40 to-transparent" />
+        <div className="absolute left-4 top-4 inline-flex items-center gap-1.5 px-2 py-1 rounded-full bg-ink-950/70 backdrop-blur border border-white/10">
+          <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse-signal" />
+          <span className="text-[10px] font-medium text-slate-300 tracking-wide">
+            LIVE
+          </span>
+        </div>
       </div>
 
-      {/* Secondary Actions Row */}
-      <div className="flex items-center gap-3">
-        {/* App Store button if appStoreLink exists */}
-        {appStoreLink && (
-          <a
-            href={appStoreLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center px-3 py-2 rounded-lg bg-white/10 border border-white/20 text-gray-300 hover:bg-white/20 hover:text-white transition-all duration-300 backdrop-blur-sm flex-1 justify-center text-xs"
-          >
-            <Smartphone className="w-3 h-3 mr-2" />
-            App Store
-          </a>
-        )}
+      <div className="p-6 flex flex-col flex-1">
+        <h3 className="text-base font-semibold text-white">{title}</h3>
+        <p className="mt-2.5 text-sm text-slate-400 leading-relaxed flex-1">
+          {description}
+        </p>
 
-        {/* Play Store button if playStoreLink exists */}
-        {playStoreLink && (
-          <a
-            href={playStoreLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center px-3 py-2 rounded-lg bg-white/10 border border-white/20 text-gray-300 hover:bg-white/20 hover:text-white transition-all duration-300 backdrop-blur-sm flex-1 justify-center text-xs"
-          >
-            <Smartphone className="w-3 h-3 mr-2" />
-            Play Store
-          </a>
-        )}
+        {/* Technologies */}
+        <div className="mt-4 flex flex-wrap gap-2">
+          {technologies.map((tech) => (
+            <span
+              key={tech}
+              className="px-2 py-0.5 text-[11px] rounded-md bg-white/[0.04] border border-white/[0.06] text-slate-300"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+
+        {/* Links */}
+        <div className="mt-6 pt-4 border-t border-white/[0.06] flex flex-col gap-2.5">
+          <div className="flex items-center gap-2.5">
+            <a
+              href={githubLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center flex-1 px-3 py-2 rounded-lg border border-white/10 bg-white/[0.03] text-slate-300 hover:border-accent/40 hover:text-white text-xs transition-colors duration-200"
+            >
+              <Github className="w-3.5 h-3.5 mr-2" />
+              Code
+            </a>
+            {liveLink && (
+              <a
+                href={liveLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center flex-1 px-3 py-2 rounded-lg border border-white/10 bg-white/[0.03] text-slate-300 hover:border-accent/40 hover:text-white text-xs transition-colors duration-200"
+              >
+                <Globe className="w-3.5 h-3.5 mr-2" />
+                Demo
+              </a>
+            )}
+          </div>
+          {(appStoreLink || playStoreLink) && (
+            <div className="flex items-center gap-2.5">
+              {appStoreLink && (
+                <a
+                  href={appStoreLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center flex-1 px-3 py-2 rounded-lg border border-white/10 bg-white/[0.03] text-slate-300 hover:border-accent/40 hover:text-white text-xs transition-colors duration-200"
+                >
+                  <Smartphone className="w-3.5 h-3.5 mr-2" />
+                  App Store
+                </a>
+              )}
+              {playStoreLink && (
+                <a
+                  href={playStoreLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center flex-1 px-3 py-2 rounded-lg border border-white/10 bg-white/[0.03] text-slate-300 hover:border-accent/40 hover:text-white text-xs transition-colors duration-200"
+                >
+                  <Smartphone className="w-3.5 h-3.5 mr-2" />
+                  Play Store
+                </a>
+              )}
+            </div>
+          )}
+        </div>
       </div>
     </div>
-  </div>
-
-  {/* Hover Effect Glow */}
-  <div className={`absolute inset-0 bg-gradient-to-r ${randomGradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500 rounded-2xl pointer-events-none`}></div>
-</div>
   );
 };
 

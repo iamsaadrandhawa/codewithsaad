@@ -1,134 +1,130 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
-/* Futura Font - Using local system fonts that resemble Futura */
-@font-face {
-  font-family: 'Futura';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Futura'), local('Futura-Medium');
-}
-
-@font-face {
-  font-family: 'Futura';
-  font-style: normal;
-  font-weight: 500;
-  src: local('Futura Medium'), local('Futura-Medium');
-}
-
-@font-face {
-  font-family: 'Futura';
-  font-style: normal;
-  font-weight: 600;
-  src: local('Futura Bold'), local('Futura-Bold');
-}
-
-@font-face {
-  font-family: 'Futura';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Futura Heavy'), local('Futura-Heavy');
-}
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Locomotive Scroll Required Styles */
-html.has-scroll-smooth {
-  overflow: hidden;
-}
-
-html.has-scroll-dragging {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.has-scroll-smooth body {
-  overflow: hidden;
-}
-
-.has-scroll-smooth [data-scroll-container] {
-  min-height: 100vh;
-}
-
-[data-scroll-direction="horizontal"] [data-scroll-container] {
-  height: 100vh;
-  display: inline-block;
-  white-space: nowrap;
-}
-
-[data-scroll-direction="horizontal"] [data-scroll-section] {
-  display: inline-block;
-  vertical-align: top;
-  white-space: nowrap;
-  height: 100%;
-}
-
-/* Custom scrollbar for webkit browsers */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #0f172a;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #334155;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #475569;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply text-gray-900 antialiased;
-    font-family: 'Space Grotesk', sans-serif;
+    @apply bg-ink-900 text-slate-200 antialiased;
+    font-family: 'Space Grotesk', system-ui, sans-serif;
   }
 
-  /* Apply fonts to specific elements */
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Futura', 'Space Grotesk', sans-serif;
-    font-weight: 600;
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    @apply text-white;
   }
 
-  .futura {
-    font-family: 'Futura', 'Space Grotesk', sans-serif;
+  ::selection {
+    background: rgba(34, 211, 238, 0.25);
+    color: #fff;
   }
 }
 
 @layer components {
-  .btn {
-    @apply inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500;
-  }
-
-  /* Locomotive scroll utility classes */
-  .scroll-fade-in {
+  /* Scroll reveal — elements start hidden, revealed via IntersectionObserver */
+  .reveal {
     opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.8s ease-out;
+    transform: translateY(24px);
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
   }
-
-  .scroll-fade-in.is-in-view {
+  .reveal.is-visible {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  /* Consistent card surface */
+  .card-surface {
+    @apply rounded-2xl border border-white/[0.06] bg-ink-850/80 shadow-card;
+  }
+
+  .card-surface-hover {
+    @apply transition-colors duration-300 hover:border-accent/30 hover:bg-ink-800;
+  }
+
+  /* Accent underline used on headings + skill icons */
+  .accent-rule {
+    @apply h-px w-10 bg-accent/60;
+  }
+
+  /* Primary button */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg text-sm font-medium text-ink-950 bg-accent hover:bg-accent-300 transition-colors duration-200;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg text-sm font-medium text-slate-200 border border-white/10 hover:border-accent/40 hover:text-white transition-colors duration-200;
+  }
+
+  .input-field {
+    @apply block w-full rounded-lg bg-ink-950/60 border border-white/10 text-white placeholder-slate-500 px-4 py-3 transition-colors duration-200 focus:border-accent/60 focus:ring-1 focus:ring-accent/40 focus:outline-none;
   }
 }
 
 @layer utilities {
-  .font-space-grotesk {
-    font-family: 'Space Grotesk', sans-serif;
+  /* Faint circuit/fiber grid pattern for section backgrounds */
+  .bg-circuit {
+    background-image:
+      linear-gradient(rgba(34, 211, 238, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(34, 211, 238, 0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
   }
 
-  .font-futura {
-    font-family: 'Futura', 'Space Grotesk', sans-serif;
+  .bg-circuit-fade {
+    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 30%, transparent 75%);
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 30%, transparent 75%);
+  }
+
+  .text-accent-gradient {
+    background: linear-gradient(135deg, #67E8F9 0%, #22D3EE 50%, #818CF8 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Webkit scrollbar — dark themed */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0B0F14;
+}
+::-webkit-scrollbar-thumb {
+  background: #1A2533;
+  border-radius: 5px;
+  border: 2px solid #0B0F14;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #243041;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
   }
 }
