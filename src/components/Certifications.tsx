@@ -65,6 +65,7 @@ const Certifications = () => {
           <FiberLine
             orientation="vertical"
             className="absolute left-5 sm:left-6 top-0 bottom-0 h-full"
+            cableIndex={1}
           />
 
           <div className="space-y-6 pl-14 sm:pl-20">
@@ -72,7 +73,7 @@ const Certifications = () => {
               <div key={cert.name} className="relative">
                 {/* Switch node on the trunk */}
                 <div className="absolute -left-14 sm:-left-20 top-5 z-10">
-                  <SwitchNode ports={4} icon={<Router className="w-3.5 h-3.5" />} />
+                  <SwitchNode ports={4} icon={<Router className="w-3.5 h-3.5" />} portColorOffset={i} />
                 </div>
 
                 {/* Horizontal ethernet drop */}

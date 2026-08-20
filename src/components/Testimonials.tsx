@@ -102,7 +102,7 @@ const Testimonials = () => {
             )}
 
             {/* Horizontal fiber trunk above the carousel */}
-            <FiberLine orientation="horizontal" className="w-full" />
+            <FiberLine orientation="horizontal" className="w-full" cableIndex={2} />
 
             <div
               ref={scrollContainerRef}
@@ -114,7 +114,7 @@ const Testimonials = () => {
                 <div key={i} className="shrink-0 w-80 snap-start relative">
                   {/* Switch node + vertical drop above each card */}
                   <div className="flex flex-col items-center">
-                    <SwitchNode ports={3} icon={<Router className="w-3 h-3" />} />
+                    <SwitchNode ports={3} icon={<Router className="w-3 h-3" />} portColorOffset={i} />
                     <DropConnector orientation="vertical" length="h-6" />
                   </div>
 

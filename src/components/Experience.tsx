@@ -77,6 +77,7 @@ const Experience = () => {
           <FiberLine
             orientation="vertical"
             className="absolute left-5 sm:left-1/2 top-0 bottom-0 h-full sm:-translate-x-1/2"
+            cableIndex={0}
           />
 
           <div className="space-y-12">
@@ -89,7 +90,7 @@ const Experience = () => {
                 >
                   {/* Switch node on the trunk */}
                   <div className="absolute left-5 sm:left-1/2 top-4 -translate-x-1/2 z-10">
-                    <SwitchNode ports={5} icon={<Router className="w-3.5 h-3.5" />} />
+                    <SwitchNode ports={5} icon={<Router className="w-3.5 h-3.5" />} portColorOffset={index} />
                   </div>
 
                   <Reveal

@@ -49,6 +49,7 @@ const Skills = () => {
           <FiberLine
             orientation="vertical"
             className="absolute left-5 sm:left-6 top-0 bottom-0 h-full"
+            cableIndex={2}
           />
 
           <div className="space-y-8 pl-14 sm:pl-20">
@@ -56,7 +57,7 @@ const Skills = () => {
               <div key={cat.title} className="relative">
                 {/* Switch node on the trunk */}
                 <div className="absolute -left-14 sm:-left-20 top-0 z-10">
-                  <SwitchNode ports={5} icon={<Router className="w-3.5 h-3.5" />} />
+                  <SwitchNode ports={5} icon={<Router className="w-3.5 h-3.5" />} portColorOffset={i} />
                 </div>
 
                 {/* Horizontal ethernet drop */}
