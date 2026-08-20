@@ -61,6 +61,14 @@ export default {
           '0%, 100%': { opacity: '1' },
           '50%': { opacity: '0' },
         },
+        fiberPulse: {
+          '0%': { backgroundPosition: '0% 50%' },
+          '100%': { backgroundPosition: '200% 50%' },
+        },
+        portBlink: {
+          '0%, 100%': { opacity: '0.25' },
+          '50%': { opacity: '1' },
+        },
       },
       animation: {
         'fade-rise': 'fadeRise 0.7s cubic-bezier(0.22,1,0.36,1) forwards',
@@ -68,6 +76,8 @@ export default {
         drift: 'drift 9s ease-in-out infinite',
         dash: 'dash 1.4s linear infinite',
         blink: 'blink 1.1s step-end infinite',
+        'fiber-pulse': 'fiberPulse 3s linear infinite',
+        'port-blink': 'portBlink 1.8s ease-in-out infinite',
       },
     },
   },

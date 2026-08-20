@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
-import { Quote, Star, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Quote, Star, ChevronLeft, ChevronRight, Router } from 'lucide-react';
 import Reveal from './Reveal';
 import SectionHeading from './SectionHeading';
+import { SwitchNode, DropConnector, FiberLine } from './Topology';
 
 const testimonials = [
   { text: 'Saad delivered our mobile app ahead of schedule with exceptional quality. His expertise in React Native is outstanding.', author: 'Wei Chen', rating: 5 },
@@ -41,7 +42,7 @@ const Testimonials = () => {
     }
   };
 
-  const scrollBy = (dir: number) => {
+  const scrollByDir = (dir: number) => {
     scrollContainerRef.current?.scrollBy({ left: dir, behavior: 'smooth' });
   };
 
@@ -53,7 +54,7 @@ const Testimonials = () => {
       if (scrollLeft >= scrollWidth - clientWidth - 4) {
         scrollContainerRef.current.scrollTo({ left: 0, behavior: 'smooth' });
       } else {
-        scrollBy(300);
+        scrollByDir(300);
       }
       checkScrollButtons();
     }, 3500);
@@ -83,34 +84,40 @@ const Testimonials = () => {
           <div className="relative">
             {showLeftArrow && (
               <button
-                onClick={() => scrollBy(-300)}
+                onClick={() => scrollByDir(-300)}
                 aria-label="Scroll left"
-                className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-ink-800 border border-white/10 flex items-center justify-center text-slate-300 hover:border-accent/40 hover:text-accent transition-colors duration-200 -ml-3"
+                className="absolute left-0 top-[calc(50%+1.5rem)] -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-ink-800 border border-white/10 flex items-center justify-center text-slate-300 hover:border-accent/40 hover:text-accent transition-colors duration-200 -ml-3"
               >
                 <ChevronLeft className="w-5 h-5" />
               </button>
             )}
             {showRightArrow && (
               <button
-                onClick={() => scrollBy(300)}
+                onClick={() => scrollByDir(300)}
                 aria-label="Scroll right"
-                className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-ink-800 border border-white/10 flex items-center justify-center text-slate-300 hover:border-accent/40 hover:text-accent transition-colors duration-200 -mr-3"
+                className="absolute right-0 top-[calc(50%+1.5rem)] -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-ink-800 border border-white/10 flex items-center justify-center text-slate-300 hover:border-accent/40 hover:text-accent transition-colors duration-200 -mr-3"
               >
                 <ChevronRight className="w-5 h-5" />
               </button>
             )}
 
+            {/* Horizontal fiber trunk above the carousel */}
+            <FiberLine orientation="horizontal" className="w-full" />
+
             <div
               ref={scrollContainerRef}
-              className="flex overflow-x-auto scrollbar-hide gap-5 pb-4 snap-x snap-mandatory"
+              className="flex overflow-x-auto scrollbar-hide gap-5 pt-6 snap-x snap-mandatory"
               onMouseEnter={() => setIsPaused(true)}
               onMouseLeave={() => setIsPaused(false)}
             >
               {testimonials.map((t, i) => (
-                <div
-                  key={i}
-                  className="shrink-0 w-80 snap-start"
-                >
+                <div key={i} className="shrink-0 w-80 snap-start relative">
+                  {/* Switch node + vertical drop above each card */}
+                  <div className="flex flex-col items-center">
+                    <SwitchNode ports={3} icon={<Router className="w-3 h-3" />} />
+                    <DropConnector orientation="vertical" length="h-6" />
+                  </div>
+
                   <div className="card-surface card-surface-hover p-6 h-full group">
                     <div className="flex items-center justify-between">
                       <div className="w-10 h-10 rounded-lg border border-white/10 bg-white/[0.03] flex items-center justify-center text-accent group-hover:border-accent/30 transition-colors duration-300">

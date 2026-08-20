@@ -1,6 +1,7 @@
-import { Calendar, MapPin } from 'lucide-react';
+import { Calendar, MapPin, Router } from 'lucide-react';
 import Reveal from './Reveal';
 import SectionHeading from './SectionHeading';
+import { FiberLine, SwitchNode, DropConnector } from './Topology';
 
 const experiences = [
   {
@@ -72,10 +73,13 @@ const Experience = () => {
         />
 
         <div className="relative">
-          {/* Vertical line */}
-          <div className="absolute left-4 sm:left-1/2 top-2 bottom-2 w-px bg-gradient-to-b from-accent/50 via-accent/20 to-transparent sm:-translate-x-1/2" aria-hidden />
+          {/* Vertical fiber trunk */}
+          <FiberLine
+            orientation="vertical"
+            className="absolute left-5 sm:left-1/2 top-0 bottom-0 h-full sm:-translate-x-1/2"
+          />
 
-          <div className="space-y-10">
+          <div className="space-y-12">
             {experiences.map((exp, index) => {
               const isLeft = index % 2 === 0;
               return (
@@ -83,21 +87,26 @@ const Experience = () => {
                   key={exp.position}
                   className={`relative flex ${isLeft ? 'sm:justify-start' : 'sm:justify-end'}`}
                 >
-                  {/* Node dot */}
-                  <span
-                    className="absolute left-4 sm:left-1/2 top-6 -translate-x-1/2 z-10 flex items-center justify-center"
-                    aria-hidden
-                  >
-                    <span className="w-3 h-3 rounded-full bg-accent ring-4 ring-ink-900" />
-                    <span className="absolute w-3 h-3 rounded-full bg-accent/40 animate-ping" />
-                  </span>
+                  {/* Switch node on the trunk */}
+                  <div className="absolute left-5 sm:left-1/2 top-4 -translate-x-1/2 z-10">
+                    <SwitchNode ports={5} icon={<Router className="w-3.5 h-3.5" />} />
+                  </div>
 
                   <Reveal
-                    className={`pl-12 sm:pl-0 w-full sm:w-[calc(50%-2rem)] ${
-                      isLeft ? 'sm:pr-8' : 'sm:pl-8'
+                    className={`pl-16 sm:pl-0 w-full sm:w-[calc(50%-2.5rem)] ${
+                      isLeft ? 'sm:pr-10' : 'sm:pl-10'
                     }`}
                   >
-                    <div className="card-surface card-surface-hover p-6 group">
+                    {/* Horizontal ethernet drop from trunk to card (desktop) */}
+                    <div
+                      className={`hidden sm:flex items-center ${
+                        isLeft ? 'justify-end' : 'justify-start'
+                      }`}
+                    >
+                      <DropConnector orientation="horizontal" length="w-8" />
+                    </div>
+
+                    <div className="card-surface card-surface-hover p-6 group mt-1">
                       <div className="flex items-start gap-4">
                         <div className="shrink-0 w-14 h-14 rounded-lg border border-white/10 bg-white/[0.03] p-2 flex items-center justify-center overflow-hidden">
                           <img
@@ -127,6 +136,7 @@ const Experience = () => {
                         {exp.description}
                       </p>
 
+                      {/* Skills as ethernet endpoint chips */}
                       <div className="mt-4 flex flex-wrap gap-2">
                         {exp.skills.map((skill) => (
                           <span

@@ -1,6 +1,7 @@
-import { Award, ExternalLink, FileText } from 'lucide-react';
+import { Award, ExternalLink, FileText, Router } from 'lucide-react';
 import Reveal from './Reveal';
 import SectionHeading from './SectionHeading';
+import { FiberLine, SwitchNode, DropConnector } from './Topology';
 
 const certifications = [
   {
@@ -51,7 +52,7 @@ const Certifications = () => {
   return (
     <section id="certifications" className="py-24 bg-ink-900 relative">
       <div className="absolute inset-0 bg-circuit bg-circuit-fade opacity-25" aria-hidden />
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Professional Credentials"
           title="Certifications"
@@ -59,38 +60,58 @@ const Certifications = () => {
           icon={<FileText className="w-3.5 h-3.5" />}
         />
 
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {certifications.map((cert, i) => (
-            <Reveal key={cert.name} delay={(i % 3) * 90}>
-              <div className="card-surface card-surface-hover p-6 h-full group">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg border border-white/10 bg-white/[0.03] flex items-center justify-center text-accent group-hover:border-accent/30 transition-colors duration-300">
-                    <Award className="w-5 h-5" />
+        <div className="relative">
+          {/* Vertical fiber trunk */}
+          <FiberLine
+            orientation="vertical"
+            className="absolute left-5 sm:left-6 top-0 bottom-0 h-full"
+          />
+
+          <div className="space-y-6 pl-14 sm:pl-20">
+            {certifications.map((cert, i) => (
+              <div key={cert.name} className="relative">
+                {/* Switch node on the trunk */}
+                <div className="absolute -left-14 sm:-left-20 top-5 z-10">
+                  <SwitchNode ports={4} icon={<Router className="w-3.5 h-3.5" />} />
+                </div>
+
+                {/* Horizontal ethernet drop */}
+                <div className="hidden sm:block absolute left-0 top-8 w-12 h-px">
+                  <DropConnector orientation="horizontal" length="w-12" />
+                </div>
+
+                <Reveal delay={(i % 3) * 80}>
+                  <div className="card-surface card-surface-hover p-6 group">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-lg border border-white/10 bg-white/[0.03] flex items-center justify-center text-accent group-hover:border-accent/30 transition-colors duration-300">
+                        <Award className="w-5 h-5" />
+                      </div>
+                      <h3 className="text-base font-semibold text-white leading-tight">
+                        {cert.name}
+                      </h3>
+                    </div>
+
+                    <p className="mt-4 text-sm text-slate-300 font-medium">{cert.issuer}</p>
+
+                    <div className="mt-3 space-y-1 text-xs text-slate-500">
+                      <div>Issued: {cert.date}</div>
+                      <div>To: {cert.recipient}</div>
+                    </div>
+
+                    <a
+                      href={cert.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-5 inline-flex items-center justify-center w-full px-4 py-2 rounded-lg border border-white/10 bg-white/[0.03] text-slate-300 hover:border-accent/40 hover:text-white text-xs transition-colors duration-200"
+                    >
+                      <ExternalLink className="w-3.5 h-3.5 mr-2" />
+                      View Certificate
+                    </a>
                   </div>
-                  <h3 className="text-base font-semibold text-white leading-tight">
-                    {cert.name}
-                  </h3>
-                </div>
-
-                <p className="mt-4 text-sm text-slate-300 font-medium">{cert.issuer}</p>
-
-                <div className="mt-3 space-y-1 text-xs text-slate-500">
-                  <div>Issued: {cert.date}</div>
-                  <div>To: {cert.recipient}</div>
-                </div>
-
-                <a
-                  href={cert.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-5 inline-flex items-center justify-center w-full px-4 py-2 rounded-lg border border-white/10 bg-white/[0.03] text-slate-300 hover:border-accent/40 hover:text-white text-xs transition-colors duration-200"
-                >
-                  <ExternalLink className="w-3.5 h-3.5 mr-2" />
-                  View Certificate
-                </a>
+                </Reveal>
               </div>
-            </Reveal>
-          ))}
+            ))}
+          </div>
         </div>
 
         <Reveal delay={200} className="mt-12">

@@ -1,8 +1,9 @@
-import { Code2, Sparkles } from 'lucide-react';
+import { Code2, Sparkles, Server } from 'lucide-react';
 import ProjectCard from './ProjectCard';
 import { projects } from '../data/projects';
 import Reveal from './Reveal';
 import SectionHeading from './SectionHeading';
+import { FiberLine, SwitchNode, DropConnector } from './Topology';
 
 const Projects = () => {
   return (
@@ -16,12 +17,32 @@ const Projects = () => {
           icon={<Sparkles className="w-3.5 h-3.5" />}
         />
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project, i) => (
-            <Reveal key={project.title} delay={(i % 3) * 90}>
-              <ProjectCard {...project} />
-            </Reveal>
-          ))}
+        <div className="relative">
+          {/* Vertical fiber trunk */}
+          <FiberLine
+            orientation="vertical"
+            className="absolute left-5 sm:left-6 top-0 bottom-0 h-full"
+          />
+
+          <div className="space-y-8 pl-14 sm:pl-20">
+            {projects.map((project, i) => (
+              <div key={project.title} className="relative">
+                {/* Switch node on the trunk */}
+                <div className="absolute -left-14 sm:-left-20 top-6 z-10">
+                  <SwitchNode ports={4} icon={<Server className="w-3.5 h-3.5" />} />
+                </div>
+
+                {/* Horizontal ethernet drop */}
+                <div className="hidden sm:block absolute left-0 top-9 w-12 h-px">
+                  <DropConnector orientation="horizontal" length="w-12" />
+                </div>
+
+                <Reveal delay={(i % 3) * 80}>
+                  <ProjectCard {...project} />
+                </Reveal>
+              </div>
+            ))}
+          </div>
         </div>
 
         <Reveal delay={200} className="mt-12">
