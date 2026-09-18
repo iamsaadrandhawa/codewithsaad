@@ -121,7 +121,7 @@ const Hero = () => {
               {/* Frame */}
               <div className="relative w-72 h-80 sm:w-80 sm:h-96 rounded-2xl border border-white/10 bg-ink-850 overflow-hidden shadow-card">
                 <img
-                  src="./saadali.png"
+                  src="./saadlogo.png"
                   alt="Saad Ali — Developer & Network Engineer"
                   className="w-full h-full object-cover object-top"
                 />
