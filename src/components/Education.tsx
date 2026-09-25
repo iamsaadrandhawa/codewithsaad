@@ -4,6 +4,13 @@ import SectionHeading from './SectionHeading';
 
 const education = [
   {
+    degree: 'MS Information Technology',
+    institution: 'Riphah International University',
+    location: 'Faisalabad',
+    year: '2026',
+    status: 'On Going',
+  },
+  {
     degree: 'BS Computer Science',
     institution: 'Riphah International University',
     location: 'Faisalabad',
