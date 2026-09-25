@@ -3,7 +3,7 @@ import ProjectCard from './ProjectCard';
 import { projects } from '../data/projects';
 import Reveal from './Reveal';
 import SectionHeading from './SectionHeading';
-import { FiberLine, SwitchNode, DropConnector } from './Topology';
+import { SwitchNode, DropConnector } from './Topology';
 
 const Projects = () => {
   return (
@@ -18,11 +18,27 @@ const Projects = () => {
         />
 
         <div className="relative mt-16">
-          {/* Central vertical fiber trunk */}
-          <FiberLine
-            orientation="vertical"
-            className="absolute left-5 sm:left-1/2 top-0 bottom-0 h-full sm:-translate-x-1/2"
-            cableIndex={1}
+          {/* ===== CENTRAL VERTICAL FIBER TRUNK (RED GLOW) ===== */}
+          {/* Outer glow */}
+          <div
+            aria-hidden
+            className="hidden sm:block absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-[6px] rounded-full bg-red-500/30 blur-[6px]"
+          />
+          {/* Core wire */}
+          <div
+            aria-hidden
+            className="hidden sm:block absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-[2px] rounded-full bg-gradient-to-b from-red-400 via-red-500 to-red-400 shadow-[0_0_12px_rgba(239,68,68,0.9)]"
+          />
+          {/* White inner pulse */}
+          <div
+            aria-hidden
+            className="hidden sm:block absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-[1px] rounded-full bg-white/80"
+          />
+
+          {/* Mobile trunk (left side) */}
+          <div
+            aria-hidden
+            className="sm:hidden absolute left-5 -translate-x-1/2 top-0 bottom-0 w-[2px] rounded-full bg-gradient-to-b from-red-400 via-red-500 to-red-400 shadow-[0_0_10px_rgba(239,68,68,0.9)]"
           />
 
           <div className="space-y-16 sm:space-y-24">
@@ -30,8 +46,8 @@ const Projects = () => {
               const isLeft = index % 2 === 0;
               return (
                 <div key={project.title} className="relative">
-                  {/* Switch node on the trunk */}
-                  <div className="absolute left-5 sm:left-1/2 top-6 -translate-x-1/2 z-20">
+                  {/* ===== NODE ON THE TRUNK ===== */}
+                  <div className="absolute left-5 sm:left-1/2 top-6 -translate-x-1/2 z-30">
                     <SwitchNode
                       ports={4}
                       icon={<Server className="w-3.5 h-3.5" />}
@@ -39,20 +55,27 @@ const Projects = () => {
                     />
                   </div>
 
-                  {/* Mobile: card below node | Desktop: alternating sides with drop line */}
                   <div
-                    className={`flex ${
-                      isLeft ? 'sm:justify-start' : 'sm:justify-end'
-                    }`}
+                    className={`flex ${isLeft ? 'sm:justify-start' : 'sm:justify-end'}`}
                   >
-                    {/* Horizontal drop connector (desktop only) */}
+                    {/* ===== HORIZONTAL DROP WIRE (RED) ===== */}
                     <div
-                      className={`hidden sm:flex absolute top-9 z-10 items-center ${
-                        isLeft ? 'right-1/2 mr-5' : 'left-1/2 ml-5'
+                      aria-hidden
+                      className={`hidden sm:block absolute top-[30px] z-10 h-[2px] rounded-full bg-gradient-to-r from-red-500 to-red-400/40 shadow-[0_0_8px_rgba(239,68,68,0.8)] ${
+                        isLeft
+                          ? 'right-1/2 mr-2 w-12 lg:w-20'
+                          : 'left-1/2 ml-2 w-12 lg:w-20 bg-gradient-to-l from-red-500 to-red-400/40'
                       }`}
-                    >
-                      <DropConnector orientation="horizontal" length="w-16 lg:w-24" />
-                    </div>
+                    />
+                    {/* White pulse line over the red drop */}
+                    <div
+                      aria-hidden
+                      className={`hidden sm:block absolute top-[30px] z-10 h-[1px] bg-white/70 ${
+                        isLeft
+                          ? 'right-1/2 mr-2 w-12 lg:w-20'
+                          : 'left-1/2 ml-2 w-12 lg:w-20'
+                      }`}
+                    />
 
                     <Reveal
                       className={`w-full pl-16 sm:pl-0 sm:w-[calc(50%-3rem)] ${
