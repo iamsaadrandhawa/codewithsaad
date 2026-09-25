@@ -1,5 +1,29 @@
 export const projects = [
   {
+    title: 'Codraze',
+    description: 'A professional software house startup website deployed on Vercel with Supabase backend. Features a comprehensive admin panel to manage everything shown on the website including blogs, projects, and services. Built with multiple modern libraries for optimal performance and user experience.',
+    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=800',
+    technologies: ['React', 'Supabase', 'Vercel', 'Tailwind CSS'],
+    githubLink: 'https://github.com/iamsaadrandhawa',
+    liveLink: 'https://codraze.vercel.app'
+  },
+  {
+    title: 'IT Management System',
+    description: 'A comprehensive IT asset management system to track and manage entire stock inventory with issue tracking. Features role-based access control, network IP management with secure credential storage, PDF uploader for documentation, and complete asset lifecycle management. Built with React JS and Firebase for real-time updates.',
+    image: 'https://gulfmanagementsystems.com/wp-content/uploads/2024/07/Management-System-1-jpg.jpg',
+    technologies: ['React JS', 'Firebase', 'Netlify', 'Tailwind CSS', 'PDF Uploader'],
+    githubLink: 'https://github.com/iamsaadrandhawa',
+    liveLink: 'https://your-it-management-demo.com'
+  },
+  {
+    title: 'SplizWiz',
+    description: 'A specialized offline Android application designed for fiber optic splicer professionals. This comprehensive tool calculates fiber optic power loss, splitter losses, and provides accurate power budget calculations. Includes an extensive color code reference library for all types of fiber optic cores. Fully offline - no internet connection required.',
+    image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=800',
+    technologies: ['Android', 'Java/Kotlin', 'SQLite', 'Offline Storage'],
+    githubLink: 'https://github.com/iamsaadrandhawa',
+    liveLink: 'https://your-splizwiz-demo.com'
+  },
+  {
     title: 'Mascot (ISP)',
     description: 'A comprehensive ISP management app that handles Internet services with features like account status monitoring, billing information, integrated chat with providers, package modifications, and secure Stripe payments. The app includes speed testing capabilities and real-time analysis tools.',
     image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=800',
@@ -72,19 +96,19 @@ export const projects = [
     liveLink: 'https://snack.expo.dev/@iamsaadrandhawa/calcmaster'
   },
   {
-  "title": "Tenant Management App",
-  "description": "Developed a Tenant Management App using React Native, Firebase, and Firestore, allowing property owners to efficiently manage tenant details, track rent payments, and view payment history. Features include tenant search, dynamic rent status updates, and an intuitive UI for smooth user experience.",
-  "image": "https://res.cloudinary.com/realcube/image/upload/v1669396766/assets/img/Blogs/how-does-a-property-management-system-work.jpg", 
-  "technologies": ["React Native", "Firebase", "Firestore"],
-  "githubLink": "https://github.com/iamsaadrandhawa/tenant-management-app", 
-  "liveLink": "https://your-live-demo-link-here"
-},
- {
-    "title": "NVR SyncGuard",
-    "description": "A Python tool that checks NVR and camera status, detects offline IPs, syncs time via Chrome, and generates daily Excel reports automatically.",
-    "image": "https://drive.google.com/file/d/1VtVcSTCW7m2ILDoVhGIq9vY1oXDmxJzm/view?usp=sharing",
-    "technologies": ["Python", "asyncio", "Selenium", "Excel"],
-    "githubLink": "https://github.com/iamsaadrandhawa/nvr-SyncGuard",
-    "liveLink": "https://your-live-demo-link-here"
-  }
+    title: "Tenant Management App",
+    description: "Developed a Tenant Management App using React Native, Firebase, and Firestore, allowing property owners to efficiently manage tenant details, track rent payments, and view payment history. Features include tenant search, dynamic rent status updates, and an intuitive UI for smooth user experience.",
+    image: "https://res.cloudinary.com/realcube/image/upload/v1669396766/assets/img/Blogs/how-does-a-property-management-system-work.jpg", 
+    technologies: ["React Native", "Firebase", "Firestore"],
+    githubLink: "https://github.com/iamsaadrandhawa/tenant-management-app", 
+    liveLink: "https://your-live-demo-link-here"
+  },
+  {
+    title: "NVR SyncGuard",
+    description: "A Python tool that checks NVR and camera status, detects offline IPs, syncs time via Chrome, and generates daily Excel reports automatically.",
+    image: "https://drive.google.com/file/d/1VtVcSTCW7m2ILDoVhGIq9vY1oXDmxJzm/view?usp=sharing",
+    technologies: ["Python", "asyncio", "Selenium", "Excel"],
+    githubLink: "https://github.com/iamsaadrandhawa/nvr-SyncGuard",
+    liveLink: "https://your-live-demo-link-here"
+  },
 ];
