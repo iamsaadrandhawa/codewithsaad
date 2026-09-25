@@ -16,7 +16,7 @@ const experiences = [
       'Software Installation', 'IT Support', 'Maintenance', 'Configuration',
       'Customer Service', 'Problem Solving', 'Remote Support',
     ],
-    logo: 'https://jadeedgroup.com/wp-content/uploads/2024/07/jadeed-logo.png',
+    logo: 'https://jadeedgroup.com/images/logo%20jadeed.png',
   },
   {
     position: 'MERN-Stack Developer',
@@ -57,7 +57,7 @@ const experiences = [
       'Fiber Optical', 'Routing', 'Security', 'Monitoring', 'Troubleshooting',
       'Maintenance', 'Configuration', 'Mikrotik', 'Switches', 'Firewalls', 'Network Design',
     ],
-    logo: 'https://root.mascotfibernet.com/admin/assets/images/logo-dark.png',
+    logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgA-ND1cYOrkF9nz_avmdrsAHLTp7j5ZVqa-3K00Wvfw&s=10',
   },
 ];
 
