@@ -138,7 +138,12 @@ const Experience = () => {
                       }`}
                       delay={(index % 3) * 80}
                     >
-                      <div className="card-surface card-surface-hover p-6 group">
+                      <div className="card-surface card-surface-hover p-6 group relative overflow-hidden">
+                        {/* Year badge top-right */}
+                        <div className="absolute top-4 right-4 px-2 py-0.5 rounded-md text-[11px] font-mono font-medium border border-white/10 bg-white/[0.03] text-slate-400">
+                          {exp.period.split('–')[1]?.trim() || exp.period}
+                        </div>
+
                         <div className="flex items-start gap-4">
                           <div className="shrink-0 w-14 h-14 rounded-lg border border-white/10 bg-white/[0.03] p-2 flex items-center justify-center overflow-hidden">
                             <img
@@ -148,7 +153,7 @@ const Experience = () => {
                               loading="lazy"
                             />
                           </div>
-                          <div className="min-w-0">
+                          <div className="min-w-0 pr-16">
                             <h3 className="text-base font-semibold text-white">
                               {exp.position}
                             </h3>
@@ -189,6 +194,11 @@ const Experience = () => {
                 </div>
               );
             })}
+          </div>
+
+          {/* Bottom terminator */}
+          <div className="hidden sm:flex absolute left-1/2 -translate-x-1/2 -bottom-6 z-20 items-center justify-center">
+            <div className="w-3 h-3 rounded-full bg-red-500 shadow-[0_0_12px_rgba(239,68,68,0.9)]" />
           </div>
         </div>
       </div>
