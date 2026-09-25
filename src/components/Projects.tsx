@@ -6,14 +6,10 @@ import SectionHeading from './SectionHeading';
 import { FiberLine, SwitchNode, DropConnector } from './Topology';
 
 const Projects = () => {
-  // Split projects into left and right columns
-  const leftProjects = projects.filter((_, i) => i % 2 === 0);
-  const rightProjects = projects.filter((_, i) => i % 2 === 1);
-
   return (
     <section id="projects" className="py-24 bg-ink-900 relative">
       <div className="absolute inset-0 bg-circuit bg-circuit-fade opacity-25" aria-hidden />
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Portfolio Showcase"
           title="Featured Projects"
@@ -25,63 +21,51 @@ const Projects = () => {
           {/* Central vertical fiber trunk */}
           <FiberLine
             orientation="vertical"
-            className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 h-full hidden md:block"
+            className="absolute left-5 sm:left-1/2 top-0 bottom-0 h-full sm:-translate-x-1/2"
             cableIndex={1}
           />
 
-          {/* Top splitter node */}
-          <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 -top-6 z-20">
-            <SwitchNode ports={4} icon={<Server className="w-4 h-4" />} portColorOffset={0} />
-          </div>
-
-          {/* Two column layout */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 lg:gap-x-24 gap-y-10">
-            {/* Left column */}
-            <div className="space-y-10">
-              {leftProjects.map((project, i) => (
+          <div className="space-y-16 sm:space-y-24">
+            {projects.map((project, index) => {
+              const isLeft = index % 2 === 0;
+              return (
                 <div key={project.title} className="relative">
-                  {/* Horizontal drop line to center (points right) */}
-                  <div className="hidden md:block absolute -right-8 lg:-right-12 top-1/2 -translate-y-1/2 z-10">
-                    <DropConnector orientation="horizontal" length="w-8 lg:w-12" />
+                  {/* Switch node on the trunk */}
+                  <div className="absolute left-5 sm:left-1/2 top-6 -translate-x-1/2 z-20">
+                    <SwitchNode
+                      ports={4}
+                      icon={<Server className="w-3.5 h-3.5" />}
+                      portColorOffset={index}
+                    />
                   </div>
 
-                  {/* Small connector node on the card side */}
-                  <div className="hidden md:flex absolute -right-10 lg:-right-14 top-1/2 -translate-y-1/2 z-10">
-                    <SwitchNode ports={2} icon={<Server className="w-3 h-3" />} portColorOffset={i + 1} />
-                  </div>
+                  {/* Mobile: card below node | Desktop: alternating sides with drop line */}
+                  <div
+                    className={`flex ${
+                      isLeft ? 'sm:justify-start' : 'sm:justify-end'
+                    }`}
+                  >
+                    {/* Horizontal drop connector (desktop only) */}
+                    <div
+                      className={`hidden sm:flex absolute top-9 z-10 items-center ${
+                        isLeft ? 'right-1/2 mr-5' : 'left-1/2 ml-5'
+                      }`}
+                    >
+                      <DropConnector orientation="horizontal" length="w-16 lg:w-24" />
+                    </div>
 
-                  <Reveal delay={(i % 3) * 80}>
-                    <ProjectCard {...project} />
-                  </Reveal>
+                    <Reveal
+                      className={`w-full pl-16 sm:pl-0 sm:w-[calc(50%-3rem)] ${
+                        isLeft ? 'sm:pr-12 lg:pr-16' : 'sm:pl-12 lg:pl-16'
+                      }`}
+                      delay={(index % 3) * 80}
+                    >
+                      <ProjectCard {...project} />
+                    </Reveal>
+                  </div>
                 </div>
-              ))}
-            </div>
-
-            {/* Right column */}
-            <div className="space-y-10 md:mt-24">
-              {rightProjects.map((project, i) => (
-                <div key={project.title} className="relative">
-                  {/* Horizontal drop line to center (points left) */}
-                  <div className="hidden md:block absolute -left-8 lg:-left-12 top-1/2 -translate-y-1/2 z-10">
-                    <DropConnector orientation="horizontal" length="w-8 lg:w-12" />
-                  </div>
-
-                  {/* Small connector node on the card side */}
-                  <div className="hidden md:flex absolute -left-10 lg:-left-14 top-1/2 -translate-y-1/2 z-10">
-                    <SwitchNode ports={2} icon={<Server className="w-3 h-3" />} portColorOffset={i + 2} />
-                  </div>
-
-                  <Reveal delay={(i % 3) * 80}>
-                    <ProjectCard {...project} />
-                  </Reveal>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Bottom splitter node */}
-          <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 -bottom-6 z-20">
-            <SwitchNode ports={4} icon={<Server className="w-4 h-4" />} portColorOffset={3} />
+              );
+            })}
           </div>
         </div>
 
