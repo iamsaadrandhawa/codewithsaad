@@ -41,9 +41,13 @@ const Contact = () => {
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
           {/* Form */}
           <Reveal>
-            <div className="card-surface p-7 sm:p-8 h-full relative">
+            <div
+              data-explain="Send a message form. Fill in your name, email, and message, then click Send. Saad usually replies within 24 hours. This is the fastest way to start a project conversation."
+              data-explain-ur="Send a message form. Apna naam, email aur message likhein, phir Send par click karein. Saad aam tor par 24 ghanton mein jawab dete hain. Project ki baat shuru karne ka yeh sab se tez tareeqa hai."
+              className="card-surface p-7 sm:p-8 h-full relative"
+            >
               <div className="flex items-center justify-between mb-6">
-                <h3 className="text-lg font-semibold text-white">Send a message</h3>
+                <h3 className="text-base font-semibold text-white">Send a message</h3>
                 <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/[0.08] border border-accent/25">
                   <Clock className="w-3.5 h-3.5 text-accent" />
                   <span className="text-xs font-medium text-accent-200">
@@ -57,7 +61,11 @@ const Contact = () => {
 
           {/* Info */}
           <Reveal delay={120}>
-            <div className="card-surface p-7 sm:p-8 h-full">
+            <div
+              data-explain="Contact details panel. Here you can find Saad's email, phone number, WhatsApp link, and location in Tehsil Shahkot, Punjab, Pakistan. You can also connect via GitHub, LinkedIn, or WhatsApp using the icons at the bottom."
+              data-explain-ur="Contact details panel. Yahan aap Saad ka email, phone number, WhatsApp link aur location Tehsil Shahkot, Punjab, Pakistan dekh sakte hain. Neeche diye gaye icons se GitHub, LinkedIn ya WhatsApp par bhi raabta kar sakte hain."
+              className="card-surface p-7 sm:p-8 h-full"
+            >
               <ContactInfo />
             </div>
           </Reveal>

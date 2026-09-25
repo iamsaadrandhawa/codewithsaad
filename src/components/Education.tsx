@@ -11,6 +11,10 @@ const education = [
     year: '2026',
     status: 'On Going',
     ongoing: true,
+    explain:
+      'M S Information Technology at Riphah International University, Faisalabad. Saad is currently enrolled in this master\'s program, expected to complete in 2026. It is an advanced degree covering enterprise I T systems, cloud computing, network security, and modern software architecture.',
+    explainUr:
+      'M S Information Technology, Riphah International University, Faisalabad. Saad is waqt is master\'s program mein enrolled hain, 2026 mein mukammal hone ki tawaqqo hai. Yeh ek advanced degree hai jis mein enterprise I T systems, cloud computing, network security aur modern software architecture shamil hain.',
   },
   {
     degree: 'BS Computer Science',
@@ -19,6 +23,10 @@ const education = [
     year: '2024',
     status: 'Completed',
     ongoing: false,
+    explain:
+      'B S Computer Science from Riphah International University, Faisalabad, completed in 2024. This four year degree built Saad\'s foundation in programming, data structures, algorithms, databases, operating systems, and software engineering.',
+    explainUr:
+      'B S Computer Science, Riphah International University, Faisalabad, 2024 mein mukammal hui. Is chaar saal ke degree ne Saad ki programming, data structures, algorithms, databases, operating systems aur software engineering mein bunyad rakhi.',
   },
   {
     degree: 'FSC Pre Engineering',
@@ -27,6 +35,10 @@ const education = [
     year: '2020',
     status: 'Completed',
     ongoing: false,
+    explain:
+      'F S C Pre Engineering from Superior College, Shahkot, completed in 2020. This intermediate program focused on mathematics, physics, and chemistry, which built the analytical foundation for Saad\'s engineering and computer science studies.',
+    explainUr:
+      'F S C Pre Engineering, Superior College, Shahkot, 2020 mein mukammal hui. Is intermediate program mein mathematics, physics aur chemistry par tawajjo di gayi, jisne Saad ki engineering aur computer science ki taleem ke liye analytical bunyad rakhi.',
   },
   {
     degree: 'Matric in Computer Science',
@@ -35,6 +47,10 @@ const education = [
     year: '2017',
     status: 'Completed',
     ongoing: false,
+    explain:
+      'Matriculation in Computer Science from Al Raza High School, Shahkot, completed in 2017. This is where Saad\'s journey in technology started, learning the basics of computers, programming, and information technology.',
+    explainUr:
+      'Matriculation in Computer Science, Al Raza High School, Shahkot, 2017 mein mukammal hui. Yahan se Saad ka technology ka safar shuru hua, jahan unhon ne computers, programming aur information technology ki bunyadi baten seekhin.',
   },
 ];
 
@@ -90,7 +106,6 @@ const Education = () => {
                   <div className="absolute left-5 sm:left-1/2 top-6 -translate-x-1/2 z-30">
                     {edu.ongoing ? (
                       <div className="relative">
-                        {/* Pulsing halo for ongoing */}
                         <span className="absolute inset-0 rounded-full bg-red-500/40 animate-ping" />
                         <span className="absolute inset-0 rounded-full bg-red-500/20 blur-md" />
                         <SwitchNode
@@ -134,13 +149,14 @@ const Education = () => {
                       delay={(index % 3) * 80}
                     >
                       <div
-                        className={`card-surface card-surface-hover p-6 group relative overflow-hidden transition-all duration-300 ${
+                        data-explain={edu.explain}
+                        data-explain-ur={edu.explainUr}
+                        className={`card-surface card-surface-hover p-6 group relative overflow-hidden transition-all duration-300 cursor-pointer ${
                           edu.ongoing
                             ? 'border-red-500/40 shadow-[0_0_35px_-10px_rgba(239,68,68,0.55)]'
                             : ''
                         }`}
                       >
-                        {/* Ongoing: animated scan line */}
                         {edu.ongoing && (
                           <div
                             aria-hidden
@@ -164,7 +180,6 @@ const Education = () => {
                             </h3>
                           </div>
 
-                          {/* Year badge */}
                           <div
                             className={`shrink-0 px-2 py-0.5 rounded-md text-[11px] font-mono font-medium border ${
                               edu.ongoing
@@ -191,7 +206,6 @@ const Education = () => {
                           </div>
                         </div>
 
-                        {/* Status pill */}
                         <div
                           className={`mt-5 inline-flex items-center gap-2 px-2.5 py-1 rounded-full border ${
                             edu.ongoing
@@ -222,7 +236,6 @@ const Education = () => {
             })}
           </div>
 
-          {/* Bottom terminator */}
           <div className="hidden sm:flex absolute left-1/2 -translate-x-1/2 -bottom-6 z-20 items-center justify-center">
             <div className="w-3 h-3 rounded-full bg-red-500 shadow-[0_0_12px_rgba(239,68,68,0.9)]" />
           </div>

@@ -9,6 +9,8 @@ interface ProjectCardProps {
   liveLink: string;
   appStoreLink?: string;
   playStoreLink?: string;
+  explain?: string;
+  explainUr?: string;
 }
 
 const ProjectCard = ({
@@ -20,9 +22,28 @@ const ProjectCard = ({
   liveLink,
   appStoreLink,
   playStoreLink,
+  explain,
+  explainUr,
 }: ProjectCardProps) => {
+  // Auto-generate fallback if no explanation provided
+  const fallbackEn =
+    explain ||
+    `${title}. ${description} Built using ${technologies.join(
+      ', '
+    )}. You can view the code on GitHub or open the live demo.`;
+
+  const fallbackUr =
+    explainUr ||
+    `${title}. ${description} Ismein ${technologies.join(
+      ', '
+    )} use kiya gaya hai. Aap GitHub par code dekh sakte hain ya live demo khol sakte hain.`;
+
   return (
-    <div className="card-surface card-surface-hover flex flex-col h-full overflow-hidden group">
+    <div
+      data-explain={fallbackEn}
+      data-explain-ur={fallbackUr}
+      className="card-surface card-surface-hover flex flex-col h-full overflow-hidden group cursor-pointer"
+    >
       {/* Image */}
       <div className="relative overflow-hidden h-44">
         <img
@@ -65,6 +86,7 @@ const ProjectCard = ({
               href={githubLink}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
               className="inline-flex items-center justify-center flex-1 px-3 py-2 rounded-lg border border-white/10 bg-white/[0.03] text-slate-300 hover:border-accent/40 hover:text-white text-xs transition-colors duration-200"
             >
               <Github className="w-3.5 h-3.5 mr-2" />
@@ -75,6 +97,7 @@ const ProjectCard = ({
                 href={liveLink}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
                 className="inline-flex items-center justify-center flex-1 px-3 py-2 rounded-lg border border-white/10 bg-white/[0.03] text-slate-300 hover:border-accent/40 hover:text-white text-xs transition-colors duration-200"
               >
                 <Globe className="w-3.5 h-3.5 mr-2" />
@@ -89,6 +112,7 @@ const ProjectCard = ({
                   href={appStoreLink}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
                   className="inline-flex items-center justify-center flex-1 px-3 py-2 rounded-lg border border-white/10 bg-white/[0.03] text-slate-300 hover:border-accent/40 hover:text-white text-xs transition-colors duration-200"
                 >
                   <Smartphone className="w-3.5 h-3.5 mr-2" />
@@ -100,6 +124,7 @@ const ProjectCard = ({
                   href={playStoreLink}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
                   className="inline-flex items-center justify-center flex-1 px-3 py-2 rounded-lg border border-white/10 bg-white/[0.03] text-slate-300 hover:border-accent/40 hover:text-white text-xs transition-colors duration-200"
                 >
                   <Smartphone className="w-3.5 h-3.5 mr-2" />

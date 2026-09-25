@@ -3,6 +3,25 @@
   <head>
     <meta charset="UTF-8" />
 
+    <!-- =====================================================
+         THEME INIT (runs before paint to avoid a flash)
+    ====================================================== -->
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem('theme');
+          var prefersLight =
+            window.matchMedia &&
+            window.matchMedia('(prefers-color-scheme: light)').matches;
+          if (saved === 'light' || (!saved && prefersLight)) {
+            document.documentElement.classList.add('light');
+          }
+        } catch (e) {
+          /* localStorage unavailable — default dark theme applies */
+        }
+      })();
+    </script>
+
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0"
@@ -29,7 +48,7 @@
          PRIMARY SEO
     ====================================================== -->
     <title>
-      Saad Ali (Saad Randhawa) | Software Developer & IT Professional
+      Saad Ali | Software Developer & IT Professional
     </title>
 
     <meta

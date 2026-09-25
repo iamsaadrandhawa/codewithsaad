@@ -1,20 +1,38 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: 'class',
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+
       fontFamily: {
         sans: ['Space Grotesk', 'system-ui', 'sans-serif'],
       },
+      extend: {
+        keyframes: {
+          armSwingLeft: { '0%': { transform: 'rotate(-18deg)' }, '100%': { transform: 'rotate(18deg)' } },
+          armSwingRight: { '0%': { transform: 'rotate(18deg)' }, '100%': { transform: 'rotate(-18deg)' } },
+          legSwingLeft: { '0%': { transform: 'rotate(-14deg)' }, '100%': { transform: 'rotate(14deg)' } },
+          legSwingRight: { '0%': { transform: 'rotate(14deg)' }, '100%': { transform: 'rotate(-14deg)' } },
+        },
+      },
       colors: {
         ink: {
-          950: '#070A0F',
-          900: '#0B0F14',
-          850: '#0F1620',
-          800: '#131C28',
-          700: '#1A2533',
-          600: '#243041',
-          500: '#334155',
+          950: 'rgb(var(--ink-950) / <alpha-value>)',
+          900: 'rgb(var(--ink-900) / <alpha-value>)',
+          850: 'rgb(var(--ink-850) / <alpha-value>)',
+          800: 'rgb(var(--ink-800) / <alpha-value>)',
+          700: 'rgb(var(--ink-700) / <alpha-value>)',
+          600: 'rgb(var(--ink-600) / <alpha-value>)',
+          500: 'rgb(var(--ink-500) / <alpha-value>)',
+        },
+        white: 'rgb(var(--white) / <alpha-value>)',
+        slate: {
+          200: 'rgb(var(--slate-200) / <alpha-value>)',
+          300: 'rgb(var(--slate-300) / <alpha-value>)',
+          400: 'rgb(var(--slate-400) / <alpha-value>)',
+          500: 'rgb(var(--slate-500) / <alpha-value>)',
+          600: 'rgb(var(--slate-600) / <alpha-value>)',
         },
         accent: {
           DEFAULT: '#22D3EE',
@@ -69,6 +87,18 @@ export default {
           '0%, 100%': { opacity: '0.25' },
           '50%': { opacity: '1' },
         },
+        orbitSpin: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
+        orbitSpinReverse: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(-360deg)' },
+        },
+        navPulse: {
+          '0%': { transform: 'translateY(0) scale(1)', opacity: '1' },
+          '100%': { transform: 'translateY(40px) scale(0.4)', opacity: '0' },
+        },
       },
       animation: {
         'fade-rise': 'fadeRise 0.7s cubic-bezier(0.22,1,0.36,1) forwards',
@@ -78,6 +108,9 @@ export default {
         blink: 'blink 1.1s step-end infinite',
         'fiber-pulse': 'fiberPulse 3s linear infinite',
         'port-blink': 'portBlink 1.8s ease-in-out infinite',
+        'orbit-spin': 'orbitSpin 24s linear infinite',
+        'orbit-spin-reverse': 'orbitSpinReverse 24s linear infinite',
+        'nav-pulse': 'navPulse 0.7s ease-out forwards',
       },
     },
   },

@@ -1,4 +1,6 @@
 import { Mail, Phone, MapPin, Linkedin, Github, ExternalLink } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
+import { getWhatsAppLink } from '../utils/whatsapp';
 
 const items = [
   {
@@ -6,18 +8,28 @@ const items = [
     value: 'iamsaadrandhawa@gmail.com',
     href: 'mailto:saadrandhawa03@gmail.com',
     icon: <Mail className="w-5 h-5" />,
+    external: false,
   },
   {
     label: 'Phone',
     value: '+92 345 0450266',
     href: 'tel:+923450450266',
     icon: <Phone className="w-5 h-5" />,
+    external: false,
+  },
+  {
+    label: 'WhatsApp',
+    value: 'Chat instantly — +92 345 0450266',
+    href: getWhatsAppLink(),
+    icon: <WhatsAppIcon className="w-5 h-5" />,
+    external: true,
   },
   {
     label: 'Location',
     value: 'Tehsil Shahkot, Punjab, Pakistan',
     href: null,
     icon: <MapPin className="w-5 h-5" />,
+    external: false,
   },
 ];
 
@@ -43,6 +55,8 @@ const ContactInfo = () => {
               {item.href ? (
                 <a
                   href={item.href}
+                  target={item.external ? '_blank' : undefined}
+                  rel={item.external ? 'noopener noreferrer' : undefined}
                   className="text-sm text-slate-200 hover:text-accent transition-colors duration-200 inline-flex items-center group"
                 >
                   {item.value}
@@ -76,6 +90,15 @@ const ContactInfo = () => {
             className="w-10 h-10 rounded-lg border border-white/10 bg-white/[0.03] flex items-center justify-center text-slate-300 hover:border-accent/40 hover:text-accent transition-colors duration-200"
           >
             <Linkedin className="w-5 h-5" />
+          </a>
+          <a
+            href={getWhatsAppLink()}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="WhatsApp"
+            className="w-10 h-10 rounded-lg border border-white/10 bg-white/[0.03] flex items-center justify-center text-slate-300 hover:border-[#25D366]/50 hover:text-[#25D366] transition-colors duration-200"
+          >
+            <WhatsAppIcon className="w-5 h-5" />
           </a>
         </div>
       </div>
