@@ -106,7 +106,7 @@ export const projects = [
   {
     title: "NVR SyncGuard",
     description: "A Python tool that checks NVR and camera status, detects offline IPs, syncs time via Chrome, and generates daily Excel reports automatically.",
-    image: "https://drive.google.com/file/d/1VtVcSTCW7m2ILDoVhGIq9vY1oXDmxJzm/view?usp=sharing",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4vzVjpTq-r417FIbpMbMtFIZ5f7jLIGq9Jy5OXv_gCA&s=10",
     technologies: ["Python", "asyncio", "Selenium", "Excel"],
     githubLink: "https://github.com/iamsaadrandhawa/nvr-SyncGuard",
     liveLink: "https://your-live-demo-link-here"
